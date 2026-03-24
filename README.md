@@ -8,9 +8,9 @@ Materials for the RTU Digitalas Prasmes course for adult professionals, with a p
 
 ## Instructor
 
-Valdis Saulespurens
-Lector, Riga Technical University - Faculty of Computer Science, Information Technology and Energy
-E-mail valdis.saulespurens at above mentioned rtu.lv
+* Valdis Saulespurens
+* Lector, Riga Technical University - Faculty of Computer Science, Information Technology and Energy
+* E-mail valdis.saulespurens at above mentioned rtu.lv
 
 ## Contents
 

@@ -22,6 +22,16 @@ Materials for the RTU Digitalas Prasmes course for adult professionals, with a p
   - A Latvian-language version of the same top-level orientation.
 - `LICENSE`
   - The repository is shared under the MIT License, so the teaching materials and code can be reused and adapted with attribution.
+- `TOOLS.md`
+  - A short overview of the software and services used to build the repository materials.
+
+### Introductory Slides and Lecture Material
+
+- `intro_vba_excel.pdf`
+  - A ready-to-read slide deck for the introductory Excel VBA lesson.
+  - Best for students who want a quick conceptual overview before opening Excel.
+- `intro_vba_excel.pptx`
+  - The editable PowerPoint source of the same introductory material.
 
 ### `components/` - Starter Materials for Practice
 
@@ -46,6 +56,14 @@ Materials for the RTU Digitalas Prasmes course for adult professionals, with a p
 - `complete_workbook/README_LV.md`
   - A Latvian-language version of the same editing guide.
 
+### `exercises/` - Guided Practice
+
+- `exercises/README.md`
+  - The main exercise track for practicing the course material from macro recording up to a small end-to-end workflow.
+  - Useful if you want a more structured sequence than the standalone workbook and module files.
+- `exercises/exercise_1/README.md`
+  - A detailed beginner walkthrough for recording a first macro and understanding what the recorder generates.
+
 ### `vba_guides/` - Quick Reference Material
 
 - `README.md`
@@ -55,15 +73,28 @@ Materials for the RTU Digitalas Prasmes course for adult professionals, with a p
   - A Latvian-language version of the VBA beginner cheatsheet.
   - Useful for students who prefer reviewing concepts in Latvian.
 
+### `history/` - Broader Context
+
+- `history/README.md`
+  - Background reading on the history of VBA and its place among newer Office automation technologies.
+  - Useful for students who want conceptual context, not only hands-on practice.
+- `history/VBA_and_Modern_Automation.pdf`
+  - A presentation version of the historical and strategic overview.
+- `history/VBA_and_Modern_Automation.pptx`
+  - The editable PowerPoint source of the same material.
+
 ### Current Repository State
 
 - The repository currently focuses mainly on the Excel and VBA part of the course.
-- The most complete learning materials at the moment are the workbook templates, the shared VBA module, and the English and Latvian guidance files across the repository.
+- The repository now includes several types of learning material: introductory slides, workbook templates, guided exercises, quick-reference guides, and historical context material.
 - The VBA exercises currently assume workbook sheets such as `RawData`, `CleanData`, `Report`, and `Playground`, so students should keep those sheet names unchanged unless they are also updating the code.
 - The repository name mentions Python, but the visible materials in the current version are primarily VBA-oriented.
+- Some of the newer exercise and history materials are currently documented in English only.
 
 ### Suggested Study Path
 
-- If you are new to the course, start with `components/` and practice importing and running the macros yourself.
+- If you are new to the course, start with `intro_vba_excel.pdf`, then review `vba_guides/`, and only then move into `exercises/` or `components/`.
+- If you want a structured practice sequence, use `exercises/README.md` as the main path and refer to the workbook files when needed.
 - If you are returning and want a fast refresher, open the cheatsheet in `vba_guides/` and then review the finished workbook in `complete_workbook/`.
+- If you want broader context on why VBA still matters, read `history/README.md` or the related slides in `history/`.
 - If you want to experiment safely, begin with simple edits such as changing output text, target cells, or report titles before modifying the full workflow.

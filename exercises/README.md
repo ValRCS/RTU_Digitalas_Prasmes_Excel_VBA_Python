@@ -63,6 +63,8 @@ What you should learn:
 
 * Recorded macros often depend on the current selection, which makes them fragile.
 
+Detailed version: [`exercise_2/README.md`](./exercise_2/README.md)
+
 ### Exercise 3: Remove `.Select`
 
 Goal: replace recorded-style code with direct object references.

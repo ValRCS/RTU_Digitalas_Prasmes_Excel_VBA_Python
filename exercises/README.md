@@ -91,6 +91,8 @@ What you should see:
 
 * The result stays the same, but the code is cleaner and more reliable.
 
+Detailed version: [`exercise_3/README.md`](./exercise_3/README.md)
+
 ### Exercise 4: Write Your First Custom Macro
 
 Goal: write a simple macro from scratch.
@@ -112,6 +114,8 @@ What to do:
 What you should see:
 
 * Cell `A1` is updated.
+
+Detailed version: [`exercise_4/README.md`](./exercise_4/README.md)
 
 ### Exercise 5: Understand the Object Model
 

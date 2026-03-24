@@ -12,6 +12,8 @@ Materials for the RTU Digitalas Prasmes course for adult professionals, with a p
 
 - `README.md`
   - The top-level orientation file for students who are new to the course or returning after a break.
+- `README_LV.md`
+  - A Latvian-language version of the same top-level orientation.
 - `LICENSE`
   - The repository is shared under the MIT License, so the teaching materials and code can be reused and adapted with attribution.
 
@@ -25,6 +27,8 @@ Materials for the RTU Digitalas Prasmes course for adult professionals, with a p
   - The macros cover writing values to sheets, copying data, cleaning data, sorting, generating a report, using `InputBox`, and running the full workflow.
 - `components/README.md`
   - A beginner-oriented guide for importing the `.bas` file into Excel and testing the macros safely.
+- `components/README_LV.md`
+  - A Latvian-language version of the same import guide.
 
 ### `complete_workbook/` - Finished Example
 
@@ -33,6 +37,8 @@ Materials for the RTU Digitalas Prasmes course for adult professionals, with a p
   - Use this version if you want to inspect, run, and modify working macros without the extra import step.
 - `complete_workbook/README.md`
   - A step-by-step guide for opening the finished workbook, editing macros, and testing changes.
+- `complete_workbook/README_LV.md`
+  - A Latvian-language version of the same editing guide.
 
 ### `vba_guides/` - Quick Reference Material
 
@@ -46,7 +52,7 @@ Materials for the RTU Digitalas Prasmes course for adult professionals, with a p
 ### Current Repository State
 
 - The repository currently focuses mainly on the Excel and VBA part of the course.
-- The most complete learning materials at the moment are the workbook templates, the shared VBA module, and the English and Latvian VBA guides.
+- The most complete learning materials at the moment are the workbook templates, the shared VBA module, and the English and Latvian guidance files across the repository.
 - The VBA exercises currently assume workbook sheets such as `RawData`, `CleanData`, `Report`, and `Playground`, so students should keep those sheet names unchanged unless they are also updating the code.
 - The repository name mentions Python, but the visible materials in the current version are primarily VBA-oriented.
 

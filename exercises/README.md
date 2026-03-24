@@ -1,17 +1,26 @@
-Below is a **structured, step-by-step workbook exercise set** designed to accompany the 5-hour module. Each exercise builds incrementally, with **clear instructions, expected outcomes, and instructor notes**. The sequence assumes a single Excel workbook (`VBA_Exercises.xlsm`) with multiple sheets.
+# Excel VBA Exercises
 
----
+Use this folder to practice the main Excel VBA skills from the course, from recording your first macro to building a simple automated workflow.
 
-# **Workbook Structure (Preparation)**
+## Before You Start
 
-Create a macro-enabled workbook with the following sheets:
+Choose the workbook that matches how you want to study:
+
+* If you want a ready-to-run workbook with macros already included, open [`VBA_Excel_Automation_Workbook_Template_With_Macros.xlsm`](../complete_workbook/VBA_Excel_Automation_Workbook_Template_With_Macros.xlsm).
+* If you want to build the solution more manually, start with [`VBA_Excel_Automation_Workbook_Template.xlsm`](../components/VBA_Excel_Automation_Workbook_Template.xlsm).
+
+For the first exercise, you can also follow the detailed walkthrough in [`exercise_1/README.md`](./exercise_1/README.md).
+
+Keep these worksheet names unchanged unless you also update the VBA code:
 
 * `RawData`
 * `CleanData`
 * `Report`
 * `Playground`
 
-Populate `RawData` with simple tabular data:
+## Workbook Setup
+
+If you need to prepare the workbook yourself, populate `RawData` with simple sample data such as:
 
 | Name  | Department | Sales | Date       |
 | ----- | ---------- | ----- | ---------- |
@@ -19,102 +28,72 @@ Populate `RawData` with simple tabular data:
 | John  | IT         | 300   | 02.01.2026 |
 | Maria | Sales      | 250   | 03.01.2026 |
 
----
+## Exercise Path
 
-# **Exercise 1 — Record Your First Macro (Beginner)**
+### Exercise 1: Record Your First Macro
 
-**Goal:** Understand automation via recording
+Goal: understand how Excel actions can be recorded as reusable VBA steps.
 
-## Steps
+What to do:
 
-1. Go to **Developer → Record Macro**
-2. Name: `FormatTable`
-3. Perform:
+1. Go to **Developer -> Record Macro**.
+2. Name the macro `FormatTable`.
+3. Select the table, make the headers bold, apply borders, and AutoFit the columns.
+4. Stop recording.
+5. Clear the formatting and run the macro again.
 
-   * Select entire table
-   * Make headers bold
-   * Apply borders
-   * AutoFit columns
-4. Stop recording
+What you should see:
 
-## Run
+* The table is formatted automatically.
 
-* Clear formatting
-* Run macro again
+Detailed version: [`exercise_1/README.md`](./exercise_1/README.md)
 
-## Expected Result
+### Exercise 2: Inspect the Generated Code
 
-* Table formatted automatically
+Goal: see what Excel recorded for you.
 
-## Instructor Notes
+What to do:
 
-* Emphasize: “You just created code without coding”
+1. Press **Alt + F11**.
+2. Locate the `FormatTable` macro.
+3. Identify lines that use `.Select` and `Selection`.
+4. Ask yourself what would happen if a different range were selected before running the macro.
 
----
+What you should learn:
 
-# **Exercise 2 — Inspect and Understand Generated Code**
+* Recorded macros often depend on the current selection, which makes them fragile.
 
-## Steps
+### Exercise 3: Remove `.Select`
 
-1. Press **Alt + F11**
-2. Locate `FormatTable` macro
-3. Identify:
+Goal: replace recorded-style code with direct object references.
 
-   * `.Select`
-   * `Selection`
-
-## Task
-
-* Highlight lines that refer to selection
-
-## Discussion Questions
-
-* What happens if a different range is selected?
-* Why is this fragile?
-
----
-
-# **Exercise 3 — Remove `.Select` (Critical Skill)**
-
-## Original Code (example)
+Original code:
 
 ```vba
 Range("A1:D10").Select
 Selection.Font.Bold = True
 ```
 
-## Task
-
-Rewrite as:
+Rewrite it as:
 
 ```vba
 Range("A1:D10").Font.Bold = True
 ```
 
-## Steps
+What to do:
 
-1. Replace all `.Select` patterns
-2. Run macro again
+1. Replace `.Select` patterns where possible.
+2. Run the macro again.
 
-## Expected Result
+What you should see:
 
-* Same output, cleaner logic
+* The result stays the same, but the code is cleaner and more reliable.
 
-## Key Insight
+### Exercise 4: Write Your First Custom Macro
 
-* Direct referencing = robust automation
+Goal: write a simple macro from scratch.
 
----
-
-# **Exercise 4 — Writing Your First Custom Macro**
-
-## Goal
-
-Write a macro from scratch
-
-## Task
-
-Create:
+Task:
 
 ```vba
 Sub WriteHello()
@@ -122,27 +101,21 @@ Sub WriteHello()
 End Sub
 ```
 
-## Steps
+What to do:
 
-1. Insert new module
-2. Write code manually
-3. Run macro
+1. Insert a new module.
+2. Type the code manually.
+3. Run the macro.
 
-## Expected Result
+What you should see:
 
-* Cell A1 updated
+* Cell `A1` is updated.
 
----
+### Exercise 5: Understand the Object Model
 
-# **Exercise 5 — Understanding the Object Model**
+Goal: work explicitly with workbook objects instead of relying on whatever is active.
 
-## Goal
-
-Use Workbook → Worksheet → Range explicitly
-
-## Task
-
-Write:
+Task:
 
 ```vba
 Sub WriteToSheet()
@@ -150,28 +123,20 @@ Sub WriteToSheet()
 End Sub
 ```
 
-## Steps
+What to do:
 
-1. Ensure correct sheet name
-2. Run macro
+1. Check that the worksheet name is exactly `CleanData`.
+2. Run the macro.
 
-## Expected Result
+What you should see:
 
-* Value appears in `CleanData`
+* The value appears in `CleanData`.
 
-## Instructor Emphasis
+### Exercise 6: Copy Data Between Sheets
 
-* Avoid relying on “active sheet”
+Goal: automate a basic multi-sheet task.
 
----
-
-# **Exercise 6 — Copy Data Between Sheets**
-
-## Goal
-
-Basic automation workflow
-
-## Task
+Task:
 
 ```vba
 Sub CopyData()
@@ -180,32 +145,26 @@ Sub CopyData()
 End Sub
 ```
 
-## Steps
+What to do:
 
-1. Clear `CleanData`
-2. Run macro
+1. Clear `CleanData`.
+2. Run the macro.
 
-## Expected Result
+What you should see:
 
-* Data copied
+* The data from `RawData` is copied into `CleanData`.
 
----
+### Exercise 7: Clean Data
 
-# **Exercise 7 — Clean Data (Real Task)**
+Goal: simulate a small real-world cleanup task.
 
-## Goal
+Task:
 
-Simulate real administrative work
+* Delete column `B` (`Department`)
+* Add the header `Processed` in column `E`
+* Fill `E2:E10` with `Yes`
 
-## Task
-
-Write macro:
-
-* Delete column B (Department)
-* Add header “Processed” in column E
-* Fill E2:E10 with "Yes"
-
-## Example Solution
+Example solution:
 
 ```vba
 Sub CleanData()
@@ -220,17 +179,13 @@ Sub CleanData()
 End Sub
 ```
 
----
+### Exercise 8: Sort Data
 
-# **Exercise 8 — Sorting Data**
+Goal: automate ordering and preparation of data.
 
-## Goal
+Task:
 
-Automate ordering
-
-## Task
-
-Sort by Sales column
+Sort by the `Sales` column.
 
 ```vba
 Sub SortData()
@@ -243,23 +198,19 @@ Sub SortData()
 End Sub
 ```
 
-## Expected Result
+What you should see:
 
-* Sorted by Sales
+* The table is sorted by `Sales`.
 
----
+### Exercise 9: Generate a Simple Report
 
-# **Exercise 9 — Generate a Simple Report**
+Goal: produce an output sheet automatically.
 
-## Goal
-
-Create business output
-
-## Task
+Task:
 
 * Copy cleaned data to `Report`
-* Add title
-* Add timestamp
+* Add a title
+* Add a timestamp
 
 ```vba
 Sub GenerateReport()
@@ -279,17 +230,13 @@ Sub GenerateReport()
 End Sub
 ```
 
----
+### Exercise 10: Add User Input
 
-# **Exercise 10 — User Input (Interactive VBA)**
+Goal: make your macro interactive.
 
-## Goal
+Task:
 
-Add flexibility
-
-## Task
-
-Ask user for report title
+Ask the user for a report title.
 
 ```vba
 Sub ReportWithInput()
@@ -302,17 +249,11 @@ Sub ReportWithInput()
 End Sub
 ```
 
----
+### Exercise 11: Combine the Workflow
 
-# **Exercise 11 — Combine into Workflow**
+Goal: connect several smaller macros into one larger process.
 
-## Goal
-
-Build full automation
-
-## Task
-
-Create macro:
+Task:
 
 ```vba
 Sub FullWorkflow()
@@ -327,69 +268,60 @@ Sub FullWorkflow()
 End Sub
 ```
 
-## Expected Result
+What you should see:
 
-* One-click process
+* One macro runs the full process from start to finish.
 
----
+### Exercise 12: Practice Debugging
 
-# **Exercise 12 — Debugging Practice**
+Goal: learn how to investigate runtime errors.
 
-## Task
+Task:
 
-Introduce error:
+Introduce this error on purpose:
 
 ```vba
 Worksheets("WrongName").Range("A1").Value = "Test"
 ```
 
-## Steps
+What to do:
 
-1. Run macro → observe error
-2. Use:
+1. Run the macro and observe the error.
+2. Use **Debug**.
+3. Step through the code with **F8**.
 
-   * Debug
-   * Step through (F8)
+What you should learn:
 
-## Goal
+* Small mistakes such as a wrong worksheet name can break a macro, and the VBA editor helps you locate the problem.
 
-* Understand runtime errors
+### Exercise 13: Capstone Task
 
----
+Goal: build a complete mini-automation project.
 
-# **Exercise 13 — Capstone Task (Integrated)**
+Assignment: create a "One-Click Monthly Report" macro that:
 
-## Assignment
+* Copies raw data
+* Cleans it
+* Sorts by `Sales`
+* Generates a report
+* Asks for a report title
+* Adds a timestamp
+* Shows a completion message
 
-Create:
+## How to Check Your Progress
 
-### “One-Click Monthly Report”
+As you work through the exercises, try to confirm that your code:
 
-### Requirements
+* Avoids unnecessary `.Select` and `Selection` usage
+* Refers to worksheets and ranges clearly
+* Still works after you rerun it
+* Is readable enough that you can explain it to someone else
 
-* Copy raw data
-* Clean it
-* Sort by Sales
-* Generate report
-* Ask for report title
-* Add timestamp
-* Show completion message
+## Optional Stretch Exercises
 
----
+If you finish early or want extra practice, try one of these:
 
-# **Instructor Control Points**
-
-At each stage verify:
-
-* No `.Select` usage
-* Proper object referencing
-* Code readability
-
----
-
-# **Optional Advanced Exercises**
-
-* Loop through rows:
+* Loop through rows and bold sales values above 200:
 
 ```vba
 For i = 2 To 10
@@ -399,27 +331,9 @@ For i = 2 To 10
 Next i
 ```
 
-* Export to CSV
-* Send report via Outlook
+* Export a report to CSV
+* Send a report through Outlook
 
----
+## Learning Outcome
 
-# **Pedagogical Progression**
-
-| Stage | Skill                       |
-| ----- | --------------------------- |
-| 1–3   | Recording + cleaning macros |
-| 4–6   | Writing basic VBA           |
-| 7–9   | Real workflows              |
-| 10–11 | Interactivity + integration |
-| 12–13 | Debugging + independence    |
-
----
-
-# **Key Outcome**
-
-By completing these exercises, participants move from:
-
-> “Excel user” → “Workflow automator”
-
-> “I click buttons” → “I write code that clicks buttons”
+By the end of this set, you should be able to move from recording simple Excel actions to writing and combining your own VBA procedures for repeatable work.

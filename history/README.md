@@ -1,4 +1,6 @@
-### 1. Prehistory: BASIC and the Democratization of Programming (1960s–1980s)
+# History of VBA
+
+## 1. Prehistory: BASIC and the Democratization of Programming (1960s–1980s)
 
 ![Image](https://calltolead.dartmouth.edu/sites/default/files/content/gallery/Kemeny.jpg)
 
@@ -23,7 +25,7 @@ This is crucial: VBA is not an isolated invention but a continuation of the idea
 
 ---
 
-### 2. Visual Basic Era (1991–1996): Event-Driven GUI Programming
+## 2. Visual Basic Era (1991–1996): Event-Driven GUI Programming
 
 ![Image](https://www.cloudwisp.com/content/images/size/w1000/2020/11/VBDOS-Edit-1-1.jpg)
 
@@ -51,7 +53,7 @@ This COM-based automation model is *the* technical backbone of VBA.
 
 ---
 
-### 3. Birth of VBA (1993–1997): Embedding a Language Inside Applications
+## 3. Birth of VBA (1993–1997): Embedding a Language Inside Applications
 
 ![Image](https://www.excel-easy.com/vba/examples/images/macro-recorder/record-macro.png)
 
@@ -85,11 +87,9 @@ This made Office not just a toolset, but a **programmable platform**.
 
 ---
 
-### 4. Golden Age of VBA (Late 1990s–2000s)
+## 4. Golden Age of VBA (Late 1990s–2000s)
 
 ![Image](https://cdn.spreadsheet123.com/images/ExcelTemplates/excel-financial-model-classic-business-lg.png)
-
-![Image](https://www.allenbrowne.com/graphics/Search2000.gif)
 
 ![Image](https://miro.medium.com/v2/resize%3Afit%3A1400/1%2A8kZI9d-GIHeP5IoMwCrmWA.png)
 
@@ -119,7 +119,7 @@ Limitations already visible:
 
 ---
 
-### 5. Competition and Partial Replacement (2000s–2015)
+## 5. Competition and Partial Replacement (2000s–2015)
 
 ![Image](https://homepages.uc.edu/~thomam/Intro_OOP_Text/Images/VB_IDE.png)
 
@@ -127,17 +127,15 @@ Limitations already visible:
 
 ![Image](https://www.ifourtechnolab.com/pics/office-add-in-development-vsto-add-ins-vs-javascript-api-technology-1.webp)
 
-![Image](https://www.researchgate.net/publication/380932541/figure/fig1/AS%3A11431281247814778%401716930966022/The-basic-VSTO-add-ins-architecture-Source-Microsoft-2023.png)
-
 Microsoft attempted to modernize the ecosystem:
 
-#### a) .NET Era
+### a) .NET Era
 
 * **VB.NET** and **C#**
 * Strong typing, OOP, CLR runtime
 * Replacement ambition: VBA → .NET
 
-#### b) VSTO (Visual Studio Tools for Office)
+### b) VSTO (Visual Studio Tools for Office)
 
 * Build Office add-ins using .NET
 * More robust, but:
@@ -145,7 +143,7 @@ Microsoft attempted to modernize the ecosystem:
   * heavier deployment
   * higher complexity
 
-#### c) Security backlash
+### c) Security backlash
 
 * Macro viruses (late 1990s–2000s)
 * Result:
@@ -159,9 +157,7 @@ Outcome:
 
 ---
 
-### 6. Persistence and Entrenchment (2015–2020)
-
-![Image](https://softkeys.uk/cdn/shop/articles/VBA-Code.png?v=1686699149)
+## 6. Persistence and Entrenchment (2015–2020)
 
 ![Image](https://learn.microsoft.com/en-us/power-query/media/power-query-ui/pqui-user-interface.png)
 
@@ -188,7 +184,7 @@ These did not replace VBA; they complemented it.
 
 ---
 
-### 7. Modern Era (2020–March 2026): Coexistence, Not Replacement
+## 7. Modern Era (2020–March 2026): Coexistence, Not Replacement
 
 ![Image](https://i.sstatic.net/v44f5.png)
 
@@ -200,31 +196,31 @@ These did not replace VBA; they complemented it.
 
 Microsoft’s current strategy is **layered automation**, not replacement:
 
-#### a) Office Scripts (TypeScript-based)
+### a) Office Scripts (TypeScript-based)
 
 * Runs in Excel for Web
 * Cloud-first
 * Safer execution model
 * No direct replacement for full VBA capabilities (yet)
 
-#### b) Power Automate
+### b) Power Automate
 
 * Workflow automation across services
 * Event-driven, cloud-integrated
 
-#### c) JavaScript Office Add-ins
+### c) JavaScript Office Add-ins
 
 * Cross-platform (Windows, Mac, Web)
 * Based on web technologies
 
-#### d) AI integration (Copilot)
+### d) AI integration (Copilot)
 
 * Natural language → automation
 * Generates formulas, scripts, workflows
 
 ---
 
-### 8. Technical Nature of VBA (Why It Still Exists)
+## 8. Technical Nature of VBA (Why It Still Exists)
 
 VBA survives because of a unique combination:
 
@@ -245,7 +241,7 @@ No modern alternative fully replicates all four simultaneously.
 
 ---
 
-### 9. Current Status (March 2026)
+## 9. Current Status (March 2026)
 
 **Not deprecated, but not evolving significantly**
 
@@ -268,7 +264,7 @@ Strategic position:
 
 ---
 
-### 10. Conceptual Summary
+## 10. Conceptual Summary
 
 VBA represents a specific paradigm:
 
@@ -281,7 +277,7 @@ It is historically analogous to:
 
 ---
 
-### Related directions worth understanding
+## Related Directions Worth Understanding
 
 * COM and OLE Automation architecture
 * Excel Object Model design principles
@@ -294,3 +290,18 @@ It is historically analogous to:
 If you are teaching this, the key framing is:
 
 > VBA is not obsolete; it is **structurally irreplaceable in certain niches**, while being strategically sidelined in favor of safer, cloud-native, and cross-platform systems.
+
+## Microsoft Office Automation Technologies (2026)
+
+| Technology                          | Primary Language                  | Execution Context            | Ease of Use                     | Integration Depth (Office Object Model)        | Cross-Platform                    | Deployment Complexity             | Microsoft Strategic Support           | Typical Use Cases                                  | Status (2026)                    |
+| ----------------------------------- | --------------------------------- | ---------------------------- | ------------------------------- | ---------------------------------------------- | --------------------------------- | --------------------------------- | ------------------------------------- | -------------------------------------------------- | -------------------------------- |
+| **VBA**                             | VBA (BASIC dialect)               | In-process (desktop Office)  | **High (for non-programmers)**  | **Full, native, unrestricted**                 | ❌ Windows-only (mostly)           | **Very low** (embedded in file)   | **Maintenance mode**                  | Legacy automation, financial models, ad-hoc macros | Stable, entrenched, not evolving |
+| **Office Scripts**                  | TypeScript                        | Excel Online (cloud sandbox) | Medium                          | Moderate (Excel-focused subset API)            | ✅ Web (Windows/Mac/Linux)         | Low–Medium (cloud storage)        | **Strong (strategic)**                | Excel automation in cloud workflows                | Actively developed               |
+| **Power Automate**                  | Low-code (flow-based)             | Cloud workflows              | **Very high (non-programmers)** | Indirect (connectors, not full object model)   | ✅ Fully cross-platform            | Low                               | **Very strong (flagship automation)** | Business workflows, approvals, integrations        | Rapid growth                     |
+| **JavaScript Office Add-ins**       | JavaScript / TypeScript           | Web runtime inside Office    | Medium–High (for devs)          | Moderate (API surface still incomplete vs VBA) | ✅ Full (Win/Mac/Web)              | Medium–High (deployment, hosting) | **Strong**                            | Cross-platform extensions, enterprise add-ins      | Strategic platform               |
+| **.NET (VSTO / COM Interop)**       | C#, VB.NET                        | Desktop (external or add-in) | Low (requires dev expertise)    | **Full (via COM interop)**                     | ❌ Windows-only                    | **High**                          | **Declining (legacy but supported)**  | Enterprise-grade Office automation                 | Legacy, niche                    |
+| **Python (pywin32, xlwings, etc.)** | Python                            | External process (desktop)   | Medium                          | High (via COM bridge)                          | ❌ Mostly Windows (COM dependency) | Medium                            | ❌ Not official                        | Data analysis + Excel automation                   | Popular unofficial               |
+| **Power Query / M**                 | M (functional)                    | In-app (Excel/Power BI)      | Medium                          | Limited (data-focused only)                    | ✅                                 | Low                               | **Strong**                            | ETL, data transformation                           | Core data tool                   |
+| **Power Apps**                      | Low-code (formula language)       | Cloud apps                   | High                            | Indirect (via connectors)                      | ✅                                 | Medium                            | **Very strong**                       | Custom business apps over Office data              | Growing rapidly                  |
+| **Graph API + REST**                | Any (HTTP-based)                  | External/cloud               | Low–Medium                      | Indirect (file/service level, not UI model)    | ✅                                 | Medium–High                       | **Strong**                            | Automation across M365 ecosystem                   | Strategic backend layer          |
+| **Copilot / AI Automation**         | Natural language → generated code | Hybrid (cloud + local)       | **Very high (user-facing)**     | Variable (generates VBA, scripts, flows)       | ✅                                 | Very low (user-level)             | **Very strong (flagship AI)**         | Assisted automation, code generation               | Emerging, transformative         |

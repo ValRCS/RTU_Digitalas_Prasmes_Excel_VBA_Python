@@ -223,17 +223,4 @@ Open workbook
 → Alt+F8 → Run macro
 ```
 
----
 
-# **Next Logical Steps (for learners)**
-
-* Edit one macro and re-run it
-* Add a new macro manually
-* Combine macros into a workflow (`FullWorkflow`)
-
----
-
-If you want, the next step can be:
-
-* adding a **custom ribbon button**
-* or assigning macros to **worksheet buttons for non-technical users**

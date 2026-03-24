@@ -8,9 +8,9 @@ Understand **automation via recording** and recognize that Excel actions can be 
 
 ---
 
-# Part A — Setup
+## Part A — Setup
 
-## 1. Enable Developer Tab
+### 1. Enable Developer Tab
 
 * Go to **File → Options → Customize Ribbon**
 * Enable **Developer**
@@ -18,9 +18,9 @@ Understand **automation via recording** and recognize that Excel actions can be 
 
 ---
 
-# Part B — Prepare Data
+## Part B — Prepare Data
 
-## 2. Create Example Table
+### 2. Create Example Table
 
 | Name  | Department | Salary |
 | ----- | ---------- | ------ |
@@ -35,9 +35,9 @@ Constraints:
 
 ---
 
-# Part C — Record Macro
+## Part C — Record Macro
 
-## 3. Start Recording
+### 3. Start Recording
 
 * Developer → **Record Macro**
 
@@ -50,51 +50,51 @@ Click **OK**
 
 ---
 
-# Part D — Perform Actions
+## Part D — Perform Actions
 
-## 4. Select Table
+### 4. Select Table
 
 * Click inside table
 * Press **Ctrl + A**
 
 ---
 
-## 5. Bold Headers
+### 5. Bold Headers
 
 * Select first row
 * Click **Bold**
 
 ---
 
-## 6. Apply Borders
+### 6. Apply Borders
 
 * Select entire table
 * Home → **Borders → All Borders**
 
 ---
 
-## 7. AutoFit Columns
+### 7. AutoFit Columns
 
 * Select columns
 * Home → Format → **AutoFit Column Width**
 
 ---
 
-## 8. Stop Recording
+### 8. Stop Recording
 
 * Developer → **Stop Recording**
 
 ---
 
-# Part E — Run Macro
+## Part E — Run Macro
 
-## 9. Reset Formatting
+### 9. Reset Formatting
 
 * Home → Clear → **Clear Formats**
 
 ---
 
-## 10. Run Macro
+### 10. Run Macro
 
 * Developer → **Macros**
 * Select `FormatTable`
@@ -102,7 +102,7 @@ Click **OK**
 
 ---
 
-# Expected Result
+## Expected Result
 
 Fully formatted table:
 
@@ -112,7 +112,7 @@ Fully formatted table:
 
 ---
 
-# Part F — Conceptual Layer
+## Part F — Conceptual Layer
 
 The recorder generated VBA instructions such as:
 
@@ -128,7 +128,7 @@ Key insight:
 
 ---
 
-# Part G — Troubleshooting
+## Part G — Troubleshooting
 
 ### 1. Developer Tab Missing
 
@@ -177,15 +177,15 @@ Explain corporate macro restrictions
 
 ---
 
-# Part H — Instructor Notes
+## Part H — Instructor Notes
 
-## Core Statement
+### Core Statement
 
 > “You created code without writing code.”
 
 ---
 
-## Key Concepts
+### Key Concepts
 
 * Automation = repeatable actions
 * Macro = recorded procedure
@@ -194,15 +194,15 @@ Explain corporate macro restrictions
 
 ---
 
-# Part I — Related Topics — Bonus
+## Part I — Related Topics — Bonus
 
 This section deepens conceptual understanding and introduces **first practical customization pathway**.
 
 ---
 
-## 1. Absolute vs Relative References (Critical Concept)
+### 1. Absolute vs Relative References (Critical Concept)
 
-### Absolute (Default Behavior)
+#### Absolute (Default Behavior)
 
 Recorder generates code tied to exact positions.
 
@@ -216,7 +216,7 @@ Example behavior:
 
 ---
 
-### Relative References (Better for Generalization)
+#### Relative References (Better for Generalization)
 
 To enable:
 
@@ -229,7 +229,7 @@ Now:
 
 ---
 
-### Teaching Insight
+#### Teaching Insight
 
 | Type     | Behavior    | Use Case           |
 | -------- | ----------- | ------------------ |
@@ -238,9 +238,9 @@ Now:
 
 ---
 
-## 2. Selection vs Direct Object Referencing
+### 2. Selection vs Direct Object Referencing
 
-### Selection-Based Code (Recorder Default)
+#### Selection-Based Code (Recorder Default)
 
 ```vba
 Selection.Font.Bold = True
@@ -253,7 +253,7 @@ Selection.Font.Bold = True
 
 ---
 
-### Direct Referencing (Better Practice)
+#### Direct Referencing (Better Practice)
 
 ```vba
 Range("A1:C4").Font.Bold = True
@@ -267,13 +267,13 @@ ActiveSheet.UsedRange.Font.Bold = True
 
 ---
 
-### Teaching Point
+#### Teaching Point
 
 > Selection-based macros simulate user behavior; object-based macros express intent.
 
 ---
 
-## 3. Cleaning Recorded Code
+### 3. Cleaning Recorded Code
 
 Recorded macros are:
 
@@ -283,7 +283,7 @@ Recorded macros are:
 
 ---
 
-### Typical Recorded Output
+#### Typical Recorded Output
 
 ```vba
 Select id="tswhm0"
@@ -294,7 +294,7 @@ Selection.Borders(xlEdgeRight).LineStyle = xlContinuous
 
 ---
 
-### Cleaner Version
+#### Cleaner Version
 
 ```vba
 With Selection
@@ -305,21 +305,21 @@ End With
 
 ---
 
-### Teaching Point
+#### Teaching Point
 
 > Refactoring transforms recorded scripts into maintainable programs.
 
 ---
 
-## 4. Assigning Macro to a Button (Practical Automation)
+### 4. Assigning Macro to a Button (Practical Automation)
 
 This is the **first step toward real usability**.
 
 ---
 
-### Method A — Form Control Button (Recommended for Beginners)
+#### Method A — Form Control Button (Recommended for Beginners)
 
-#### Step-by-Step
+##### Step-by-Step
 
 1. Go to:
 
@@ -338,7 +338,7 @@ This is the **first step toward real usability**.
 
 ---
 
-### Rename Button
+#### Rename Button
 
 * Right-click button → **Edit Text**
 * Example:
@@ -347,7 +347,7 @@ This is the **first step toward real usability**.
 
 ---
 
-### Test
+#### Test
 
 * Clear formatting
 * Click button
@@ -355,9 +355,9 @@ This is the **first step toward real usability**.
 
 ---
 
-### Method B — Assign Macro to Existing Shape
+#### Method B — Assign Macro to Existing Shape
 
-#### Steps:
+##### Steps:
 
 1. Insert shape:
 
@@ -373,7 +373,7 @@ This is the **first step toward real usability**.
 
 ---
 
-### Advantages
+#### Advantages
 
 | Method      | When to Use            |
 | ----------- | ---------------------- |
@@ -382,9 +382,9 @@ This is the **first step toward real usability**.
 
 ---
 
-### Common Issues
+#### Common Issues
 
-#### 1. Button does nothing
+##### 1. Button does nothing
 
 Cause:
 
@@ -396,7 +396,7 @@ Fix:
 
 ---
 
-#### 2. Macro security blocks execution
+##### 2. Macro security blocks execution
 
 Fix:
 
@@ -404,7 +404,7 @@ Fix:
 
 ---
 
-#### 3. Button disappears or moves
+##### 3. Button disappears or moves
 
 Cause:
 
@@ -416,13 +416,13 @@ Fix:
 
 ---
 
-### Instructor Emphasis
+#### Instructor Emphasis
 
 > This is the transition from “tool user” → “tool builder”.
 
 ---
 
-### Conceptual Upgrade
+#### Conceptual Upgrade
 
 You are now:
 
@@ -432,7 +432,7 @@ You are now:
 
 ---
 
-# Related Topics (Extended Context)
+### Related Topics (Extended Context)
 
 * Event-driven VBA (button click events)
 * UserForms vs worksheet controls
@@ -441,7 +441,7 @@ You are now:
 
 ---
 
-## Time Allocation
+#### Time Allocation
 
 | Section                   | Time      |
 | ------------------------- | --------- |

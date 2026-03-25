@@ -189,6 +189,8 @@ Sub CleanData()
 End Sub
 ```
 
+Detailed version: [`exercise_7/README.md`](./exercise_7/README.md)
+
 ### Exercise 8: Sort Data
 
 Goal: automate ordering and preparation of data.
@@ -211,6 +213,8 @@ End Sub
 What you should see:
 
 * The table is sorted by `Sales`.
+
+Detailed version: [`exercise_8/README.md`](./exercise_8/README.md)
 
 ### Exercise 9: Generate a Simple Report
 
@@ -240,6 +244,8 @@ Sub GenerateReport()
 End Sub
 ```
 
+Detailed version: [`exercise_9/README.md`](./exercise_9/README.md)
+
 ### Exercise 10: Add User Input
 
 Goal: make your macro interactive.
@@ -258,6 +264,8 @@ Sub ReportWithInput()
 
 End Sub
 ```
+
+Detailed version: [`exercise_10/README.md`](./exercise_10/README.md)
 
 ### Exercise 11: Combine the Workflow
 

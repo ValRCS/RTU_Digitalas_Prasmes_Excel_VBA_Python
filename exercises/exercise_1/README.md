@@ -1,26 +1,26 @@
-
-
-# Exercise 1 — Record Your First Macro (Beginner)
+# Exercise 1 - Record Your First Macro (Beginner)
 
 ## Goal
 
-Understand **automation via recording** and recognize that Excel actions can be converted into **repeatable executable procedures (VBA macros)**.
+Understand automation via recording and recognize that Excel actions can be converted into repeatable VBA procedures.
 
 ---
 
-## Part A — Setup
+## Part A - Setup
 
-### 1. Enable Developer Tab
+### 1. Enable the Developer tab
 
-* Go to **File → Options → Customize Ribbon**
-* Enable **Developer**
+* Go to **File -> Options -> Customize Ribbon**
+* Under **Main Tabs**, enable **Developer**
 * Click **OK**
 
+This matches current Excel for Windows desktop.
+
 ---
 
-## Part B — Prepare Data
+## Part B - Prepare Data
 
-### 2. Create Example Table
+### 2. Create an example table
 
 | Name  | Department | Salary |
 | ----- | ---------- | ------ |
@@ -35,68 +35,70 @@ Constraints:
 
 ---
 
-## Part C — Record Macro
+## Part C - Record the Macro
 
-### 3. Start Recording
+### 3. Start recording
 
-* Developer → **Record Macro**
+* Go to **Developer -> Record Macro**
+
+Use these settings:
 
 | Field    | Value         |
 | -------- | ------------- |
 | Name     | `FormatTable` |
 | Store in | This Workbook |
 
-Click **OK**
+Click **OK**.
 
 ---
 
-## Part D — Perform Actions
+## Part D - Perform Actions
 
-### 4. Select Table
+### 4. Select the table
 
-* Click inside table
+* Click inside the table
 * Press **Ctrl + A**
 
 ---
 
-### 5. Bold Headers
+### 5. Bold the headers
 
-* Select first row
-* Click **Bold**
-
----
-
-### 6. Apply Borders
-
-* Select entire table
-* Home → **Borders → All Borders**
+* Select the header row
+* Click **Bold** on the Home tab
 
 ---
 
-### 7. AutoFit Columns
+### 6. Apply borders
 
-* Select columns
-* Home → Format → **AutoFit Column Width**
-
----
-
-### 8. Stop Recording
-
-* Developer → **Stop Recording**
+* Select the table
+* Go to **Home -> Borders -> All Borders**
 
 ---
 
-## Part E — Run Macro
+### 7. AutoFit the columns
 
-### 9. Reset Formatting
-
-* Home → Clear → **Clear Formats**
+* Select the columns used by the table
+* Go to **Home -> Format -> AutoFit Column Width**
 
 ---
 
-### 10. Run Macro
+### 8. Stop recording
 
-* Developer → **Macros**
+* Go to **Developer -> Stop Recording**
+
+---
+
+## Part E - Run the Macro
+
+### 9. Reset the formatting
+
+* Go to **Home -> Clear -> Clear Formats**
+
+---
+
+### 10. Run the macro
+
+* Go to **Developer -> Macros**
 * Select `FormatTable`
 * Click **Run**
 
@@ -104,17 +106,17 @@ Click **OK**
 
 ## Expected Result
 
-Fully formatted table:
+The table is formatted automatically with:
 
-* Bold headers
-* Borders
-* Proper column widths
+* bold headers
+* borders
+* adjusted column widths
 
 ---
 
-## Part F — Conceptual Layer
+## Part F - Conceptual Layer
 
-The recorder generated VBA instructions such as:
+The recorder usually generates VBA instructions such as:
 
 ```vba
 Selection.Font.Bold = True
@@ -124,68 +126,81 @@ Selection.Columns.AutoFit
 
 Key insight:
 
-> Macros operate on **objects** (often `Selection`) and execute **step-by-step procedural logic**.
+> Macros operate on Excel objects, often `Selection`, and execute step-by-step procedural logic.
 
 ---
 
-## Part G — Troubleshooting
+## Part G - Troubleshooting
 
-### 1. Developer Tab Missing
-
-Enable via Excel Options
-
----
-
-### 2. Macros Disabled
-
-* File → Options → Trust Center
-* Enable macros or click **Enable Content**
-
----
-
-### 3. Lost Macro After Saving
-
-Save as:
-
-* **.xlsm**
-
----
-
-### 4. Incorrect Formatting
-
-Cause:
-
-* Wrong selection during recording
+### 1. Developer tab is missing
 
 Fix:
 
-* Re-record carefully
+* Go to **File -> Options -> Customize Ribbon**
+* Enable **Developer**
 
 ---
 
-### 5. Partial Execution
+### 2. Macros are disabled
+
+You have two common current options in Excel for Windows:
+
+* Click **Enable Content** on the security warning bar if Excel offers it
+* Or go to **Developer -> Macro Security**
+
+You can also use:
+
+* **File -> Options -> Trust Center -> Trust Center Settings -> Macro Settings**
+
+Keep in mind that **Disable all macros with notification** is the default and recommended general setting in current Excel.
+
+---
+
+### 3. The macro is missing after saving
+
+Fix:
+
+* Save the workbook as `.xlsm`
+
+---
+
+### 4. The formatting is incorrect
 
 Cause:
 
-* Macro depends on specific selection state
+* The wrong range was selected during recording
+
+Fix:
+
+* Record the macro again more carefully
 
 ---
 
-### 6. Security Warnings
+### 5. The macro only works in some cases
 
-Explain corporate macro restrictions
+Cause:
 
----
-
-## Part H — Instructor Notes
-
-### Core Statement
-
-> “You created code without writing code.”
+* Recorded macros often depend on the current selection state
 
 ---
 
-### Key Concepts
+### 6. Security warnings appear
+
+That is normal in current Excel.
+
+Excel protects users from untrusted macro-enabled files. In managed environments, macro behavior may also be restricted by organization policy.
+
+---
+
+## Part H - Instructor Notes
+
+### Core statement
+
+> You created code without writing code.
+
+---
+
+### Key concepts
 
 * Automation = repeatable actions
 * Macro = recorded procedure
@@ -194,42 +209,42 @@ Explain corporate macro restrictions
 
 ---
 
-## Part I — Related Topics — Bonus
+## Part I - Related Topics - Bonus
 
-This section deepens conceptual understanding and introduces **first practical customization pathway**.
+This section deepens conceptual understanding and introduces a practical customization path.
 
 ---
 
-### 1. Absolute vs Relative References (Critical Concept)
+### 1. Absolute vs relative references
 
-#### Absolute (Default Behavior)
+#### Absolute references
 
-Recorder generates code tied to exact positions.
+By default, the recorder often generates code tied to exact cell positions.
 
 Example behavior:
 
-* Always formats **A1:C4**, regardless of selection
+* Always formats `A1:C4`, regardless of where the user starts
 
-**Problem:**
+Problem:
 
-* Not reusable
+* Less reusable
 
 ---
 
-#### Relative References (Better for Generalization)
+#### Relative references
 
-To enable:
+To enable them:
 
-* Developer → **Use Relative References**
-* Then record macro again
+* Go to **Developer -> Use Relative References**
+* Record the macro again
 
 Now:
 
-* Macro acts relative to current selection
+* The macro acts relative to the current active cell
 
 ---
 
-#### Teaching Insight
+#### Teaching insight
 
 | Type     | Behavior    | Use Case           |
 | -------- | ----------- | ------------------ |
@@ -238,55 +253,53 @@ Now:
 
 ---
 
-### 2. Selection vs Direct Object Referencing
+### 2. Selection vs direct object references
 
-#### Selection-Based Code (Recorder Default)
+#### Selection-based code
 
 ```vba
 Selection.Font.Bold = True
 ```
 
-**Issues:**
+Issues:
 
 * Fragile
 * Depends on user state
 
 ---
 
-#### Direct Referencing (Better Practice)
+#### Direct references
 
 ```vba
 Range("A1:C4").Font.Bold = True
 ```
 
-Or more robust:
+Or:
 
 ```vba
 ActiveSheet.UsedRange.Font.Bold = True
 ```
 
----
-
-#### Teaching Point
+Teaching point:
 
 > Selection-based macros simulate user behavior; object-based macros express intent.
 
 ---
 
-### 3. Cleaning Recorded Code
+### 3. Cleaning recorded code
 
-Recorded macros are:
+Recorded macros are often:
 
-* Verbose
-* Redundant
-* Inefficient
+* verbose
+* redundant
+* inefficient
 
 ---
 
-#### Typical Recorded Output
+#### Typical recorded output
 
 ```vba
-Select id="tswhm0"
+Range("A1:C4").Select
 Selection.Font.Bold = True
 Selection.Borders(xlEdgeLeft).LineStyle = xlContinuous
 Selection.Borders(xlEdgeRight).LineStyle = xlContinuous
@@ -294,82 +307,66 @@ Selection.Borders(xlEdgeRight).LineStyle = xlContinuous
 
 ---
 
-#### Cleaner Version
+#### Cleaner version
 
 ```vba
-With Selection
+With Range("A1:C4")
     .Font.Bold = True
     .Borders.LineStyle = xlContinuous
 End With
 ```
 
----
-
-#### Teaching Point
+Teaching point:
 
 > Refactoring transforms recorded scripts into maintainable programs.
 
 ---
 
-### 4. Assigning Macro to a Button (Practical Automation)
+### 4. Assigning the macro to a button
 
-This is the **first step toward real usability**.
+This is the first step toward real usability.
 
----
+Current Excel note:
 
-#### Method A — Form Control Button (Recommended for Beginners)
-
-##### Step-by-Step
-
-1. Go to:
-
-   * Developer → **Insert**
-
-2. Under **Form Controls**:
-
-   * Select **Button (Form Control)**
-
-3. Click anywhere on worksheet to place button
-
-4. Excel immediately prompts:
-
-   * Assign Macro → select `FormatTable`
-   * Click **OK**
+* Use **Form Controls** for this exercise
+* Avoid **ActiveX controls** here, because Microsoft has them disabled by default in current Microsoft 365 and Office 2024 desktop builds unless users change security settings
 
 ---
 
-#### Rename Button
+#### Method A - Form Control button
 
-* Right-click button → **Edit Text**
-* Example:
+1. Go to **Developer -> Insert**
+2. Under **Form Controls**, select **Button (Form Control)**
+3. Click on the worksheet to place the button
+4. When Excel prompts you, assign the macro `FormatTable`
+5. Click **OK**
 
-  * “Format Table”
+---
+
+#### Rename the button
+
+* Right-click the button
+* Choose **Edit Text**
+* Rename it to something like `Format Table`
 
 ---
 
 #### Test
 
-* Clear formatting
-* Click button
-* Macro executes
+* Clear the table formatting
+* Click the button
+* Confirm that the macro runs
 
 ---
 
-#### Method B — Assign Macro to Existing Shape
+#### Method B - Assign a macro to a shape
 
-##### Steps:
-
-1. Insert shape:
-
-   * Insert → Shapes → Rectangle (or any)
-
-2. Right-click shape → **Assign Macro**
-
-3. Select:
-
-   * `FormatTable`
-
-4. Click **OK**
+1. Go to **Insert -> Shapes**
+2. Insert a shape such as a rectangle
+3. Right-click the shape
+4. Choose **Assign Macro**
+5. Select `FormatTable`
+6. Click **OK**
 
 ---
 
@@ -382,17 +379,17 @@ This is the **first step toward real usability**.
 
 ---
 
-#### Common Issues
+#### Common issues
 
-##### 1. Button does nothing
+##### 1. The button does nothing
 
 Cause:
 
-* Macro not assigned
+* No macro is assigned
 
 Fix:
 
-* Right-click → Assign Macro
+* Right-click the button or shape and choose **Assign Macro**
 
 ---
 
@@ -400,52 +397,50 @@ Fix:
 
 Fix:
 
-* Enable content
+* Use the workbook only from a trusted source
+* Enable content only when appropriate
 
 ---
 
-##### 3. Button disappears or moves
-
-Cause:
-
-* Sheet layout changes
+##### 3. The button moves when the sheet layout changes
 
 Fix:
 
-* Right-click → Format Control → Properties → "Don't move or size with cells"
+* Right-click the button
+* Choose **Format Control -> Properties**
+* Select **Don't move or size with cells**
 
 ---
 
-#### Instructor Emphasis
+#### Instructor emphasis
 
-> This is the transition from “tool user” → “tool builder”.
+> This is the transition from tool user to tool builder.
 
 ---
 
-#### Conceptual Upgrade
+#### Conceptual upgrade
 
 You are now:
 
-* Encapsulating logic
-* Creating reusable UI triggers
-* Building interactive Excel tools
+* encapsulating logic
+* creating reusable UI triggers
+* building interactive Excel tools
 
 ---
 
-### Related Topics (Extended Context)
+### Related topics
 
-* Event-driven VBA (button click events)
+* Event-driven VBA
 * UserForms vs worksheet controls
 * Modular macro design
-* Macro security policies in enterprises
+* Macro security policies in organizations
 
 ---
 
-#### Time Allocation
+#### Time allocation
 
 | Section                   | Time      |
 | ------------------------- | --------- |
 | Recording                 | 10 min    |
-| Running + troubleshooting | 10–15 min |
-| Bonus topics              | 15–25 min |
-
+| Running + troubleshooting | 10-15 min |
+| Bonus topics              | 15-25 min |

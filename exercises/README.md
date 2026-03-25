@@ -290,6 +290,8 @@ What you should see:
 
 * One macro runs the full process from start to finish.
 
+Detailed version: [`exercise_11/README.md`](./exercise_11/README.md)
+
 ### Exercise 12: Practice Debugging
 
 Goal: learn how to investigate runtime errors.
@@ -312,6 +314,8 @@ What you should learn:
 
 * Small mistakes such as a wrong worksheet name can break a macro, and the VBA editor helps you locate the problem.
 
+Detailed version: [`exercise_12/README.md`](./exercise_12/README.md)
+
 ### Exercise 13: Capstone Task
 
 Goal: build a complete mini-automation project.
@@ -325,6 +329,8 @@ Assignment: create a "One-Click Monthly Report" macro that:
 * Asks for a report title
 * Adds a timestamp
 * Shows a completion message
+
+Detailed version: [`exercise_13/README.md`](./exercise_13/README.md)
 
 ## How to Check Your Progress
 

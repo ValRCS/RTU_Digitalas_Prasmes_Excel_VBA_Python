@@ -33,14 +33,15 @@ Type this code exactly:
 
 ```vba
 Sub WriteHello()
-    Range("A1").Value = "Hello, VBA"
+    Worksheets("Playground").Range("A1").Value = "Hello, VBA"
 End Sub
 ```
 
 What this means:
 
 * `Sub WriteHello()` starts a macro named `WriteHello`
-* `Range("A1").Value = "Hello, VBA"` writes text into cell `A1`
+* `Worksheets("Playground")` identifies the target worksheet
+* `.Range("A1").Value = "Hello, VBA"` writes text into cell `A1`
 * `End Sub` ends the macro
 
 ---
@@ -51,6 +52,7 @@ Make sure:
 
 * `Sub` is spelled correctly
 * the macro name is `WriteHello`
+* `Worksheets("Playground")` includes the correct sheet name
 * `Range("A1")` includes quotation marks
 * the text `"Hello, VBA"` also includes quotation marks
 
@@ -82,7 +84,7 @@ Or use:
 
 ### 7. Check the worksheet
 
-Return to Excel and inspect cell `A1`.
+Return to Excel, open the `Playground` sheet, and inspect cell `A1`.
 
 You should see:
 
@@ -92,7 +94,7 @@ You should see:
 
 ## Expected Result
 
-Cell `A1` is updated automatically by your own handwritten VBA code.
+Cell `A1` on the `Playground` sheet is updated automatically by your own handwritten VBA code.
 
 ---
 
@@ -131,13 +133,13 @@ Key insight:
 Modify the line:
 
 ```vba
-Range("A1").Value = "Hello, VBA"
+Worksheets("Playground").Range("A1").Value = "Hello, VBA"
 ```
 
 For example:
 
 ```vba
-Range("A1").Value = "My first macro"
+Worksheets("Playground").Range("A1").Value = "My first macro"
 ```
 
 Run it again and observe the new result.
@@ -149,11 +151,12 @@ Run it again and observe the new result.
 Try changing `A1` to `B2`:
 
 ```vba
-Range("B2").Value = "Hello, VBA"
+Worksheets("Playground").Range("B2").Value = "Hello, VBA"
 ```
 
 This helps confirm that:
 
+* `Worksheets(...)` chooses the target worksheet
 * `Range(...)` chooses the target cell
 * `.Value` sets the content of that cell
 
@@ -167,7 +170,7 @@ Check:
 
 * The cursor is inside the `WriteHello` procedure when you press **F5**
 * Macros are enabled
-* You are looking at the correct worksheet
+* You are looking at the `Playground` worksheet
 
 ---
 
@@ -176,6 +179,7 @@ Check:
 Look for:
 
 * missing quotation marks
+* a missing or incorrect worksheet name in `Worksheets("Playground")`
 * missing parentheses in `Range("A1")`
 * missing `End Sub`
 
@@ -198,10 +202,11 @@ Fix:
 Cause:
 
 * The cell reference was changed accidentally
+* Or the worksheet name was changed accidentally
 
 Fix:
 
-* Recheck the target range such as `A1`
+* Recheck `Worksheets("Playground").Range("A1")`
 
 ---
 
@@ -214,6 +219,7 @@ Fix:
 Important ideas introduced here:
 
 * a macro is a `Sub`
+* Excel worksheets can be addressed directly with `Worksheets(...)`
 * Excel objects can be addressed directly with `Range(...)`
 * code can modify worksheet values without any manual clicking
 
@@ -232,7 +238,7 @@ It establishes the core pattern used in almost all later VBA work:
 Example:
 
 ```vba
-Range("A1").Value = "Hello, VBA"
+Worksheets("Playground").Range("A1").Value = "Hello, VBA"
 ```
 
 Once this pattern is clear, more advanced macros become much easier to understand and write.

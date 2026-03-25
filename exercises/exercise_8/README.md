@@ -22,12 +22,13 @@ The macro uses that worksheet name directly.
 
 Before sorting, make sure `CleanData` contains a table in the range:
 
-* `A1:D10`
+* `A1:E10`
 
 And that:
 
 * row `1` contains headers
 * the `Sales` values are in column `C`
+* the `Processed` field is in column `E`
 
 Example:
 
@@ -66,7 +67,7 @@ Sub SortData()
     Dim ws As Worksheet
     Set ws = Worksheets("CleanData")
 
-    ws.Range("A1:D10").Sort Key1:=ws.Range("C1"), Header:=xlYes
+    ws.Range("A1:E10").Sort Key1:=ws.Range("C1"), Order1:=xlAscending, Header:=xlYes
 
 End Sub
 ```
@@ -84,13 +85,14 @@ Set ws = Worksheets("CleanData")
 This line sorts the table:
 
 ```vba
-ws.Range("A1:D10").Sort Key1:=ws.Range("C1"), Header:=xlYes
+ws.Range("A1:E10").Sort Key1:=ws.Range("C1"), Order1:=xlAscending, Header:=xlYes
 ```
 
 Meaning:
 
-* sort the range `A1:D10`
+* sort the range `A1:E10`
 * use column `C` as the key
+* sort in ascending order
 * treat the first row as headers
 
 ---
@@ -148,12 +150,13 @@ This exercise introduces a common preparation step in automation:
 Core code:
 
 ```vba
-ws.Range("A1:D10").Sort Key1:=ws.Range("C1"), Header:=xlYes
+ws.Range("A1:E10").Sort Key1:=ws.Range("C1"), Order1:=xlAscending, Header:=xlYes
 ```
 
 Important idea:
 
 * `Key1` identifies the column Excel should use for sorting
+* `Order1:=xlAscending` makes the sort order explicit
 * `Header:=xlYes` tells Excel not to mix the header row into the data sort
 
 Why this matters:
@@ -175,7 +178,7 @@ Key insight:
 If you want to sort by `Name` instead, try:
 
 ```vba
-ws.Range("A1:D10").Sort Key1:=ws.Range("A1"), Header:=xlYes
+ws.Range("A1:E10").Sort Key1:=ws.Range("A1"), Order1:=xlAscending, Header:=xlYes
 ```
 
 This shows how the sort key changes the output order.
@@ -189,7 +192,7 @@ If your dataset is larger than row `10`, update the range.
 Example:
 
 ```vba
-ws.Range("A1:D20").Sort Key1:=ws.Range("C1"), Header:=xlYes
+ws.Range("A1:E20").Sort Key1:=ws.Range("C1"), Order1:=xlAscending, Header:=xlYes
 ```
 
 This reinforces that the macro only sorts the range you specify.
@@ -198,9 +201,9 @@ This reinforces that the macro only sorts the range you specify.
 
 ### 12. Observe ascending behavior
 
-The provided example sorts in Excel's default ascending order unless more options are added.
+The provided solution in `All_Exercises_04_to_11.bas` sets ascending order explicitly.
 
-That means for numeric sales values, smaller numbers usually appear first.
+That means for numeric sales values, smaller numbers appear first.
 
 This is a useful discussion point for later improvements.
 
@@ -213,6 +216,7 @@ This is a useful discussion point for later improvements.
 Cause:
 
 * `Header:=xlYes` was removed or changed
+* Or the sort range no longer includes the full table correctly
 
 Fix:
 
@@ -240,7 +244,7 @@ Fix:
 
 Cause:
 
-* The actual table is larger than `A1:D10`
+* The actual table is larger than `A1:E10`
 
 Fix:
 

@@ -16,6 +16,7 @@ This exercise assumes you already have working versions of:
 * `CleanData`
 * `SortData`
 * `GenerateReport`
+* `ReportWithInput`
 
 The `FullWorkflow` macro will call them in sequence.
 
@@ -61,8 +62,9 @@ Sub FullWorkflow()
     Call CleanData
     Call SortData
     Call GenerateReport
+    Call ReportWithInput
 
-    MsgBox "Report completed!"
+    MsgBox "Report completed!", vbInformation
 
 End Sub
 ```
@@ -78,6 +80,7 @@ Call CopyData
 Call CleanData
 Call SortData
 Call GenerateReport
+Call ReportWithInput
 ```
 
 This means:
@@ -86,11 +89,12 @@ This means:
 * clean the copied data
 * sort the cleaned data
 * generate the report sheet
+* ask for a report title and apply it to the report
 
 This line shows a completion message:
 
 ```vba
-MsgBox "Report completed!"
+MsgBox "Report completed!", vbInformation
 ```
 
 ---
@@ -126,6 +130,7 @@ After the macro finishes:
 
 * `CleanData` should contain copied and modified data
 * `Report` should contain the generated report
+* the user should be prompted for a report title
 * a message box should appear saying `Report completed!`
 
 ---
@@ -174,6 +179,7 @@ CopyData
 CleanData
 SortData
 GenerateReport
+ReportWithInput
 ```
 
 This is useful for noticing that `Call` is optional in many simple cases.
@@ -192,20 +198,16 @@ This shows that the workflow can provide user feedback at the end.
 
 ---
 
-### 12. Add `ReportWithInput`
+### 12. Change the order of `ReportWithInput`
 
-If you already completed Exercise 10, try inserting:
+The provided solution runs `ReportWithInput` after `GenerateReport`.
 
-```vba
-Call ReportWithInput
-```
-
-Then think about where it should appear:
+Think about what would happen if you moved it:
 
 * before `GenerateReport`
-* or after `GenerateReport`
+* or kept it after `GenerateReport`
 
-This is a useful design discussion about workflow order.
+This is a useful discussion about workflow order and overwrite behavior.
 
 ---
 
@@ -219,7 +221,7 @@ Cause:
 
 Fix:
 
-* Test `CopyData`, `CleanData`, `SortData`, and `GenerateReport` separately first
+* Test `CopyData`, `CleanData`, `SortData`, `GenerateReport`, and `ReportWithInput` separately first
 
 ---
 
@@ -244,6 +246,8 @@ Cause:
 Fix:
 
 * Review each procedure individually
+
+This includes checking whether `ReportWithInput` overwrites the report title as expected.
 
 ---
 

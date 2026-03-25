@@ -23,7 +23,7 @@ The macro uses both names directly.
 
 Before running the macro, confirm that `CleanData` contains data in:
 
-* `A1:D10`
+* `A1:E10`
 
 This will be the source range copied into the report.
 
@@ -39,6 +39,7 @@ This macro will:
 * place a title in `A1`
 * place a timestamp in `A2`
 * copy the main table starting at `A4`
+* AutoFit columns `A:E` on the report
 
 ---
 
@@ -76,7 +77,8 @@ Sub GenerateReport()
     dst.Range("A1").Value = "Sales Report"
     dst.Range("A2").Value = "Generated: " & Now
 
-    src.Range("A1:D10").Copy Destination:=dst.Range("A4")
+    src.Range("A1:E10").Copy Destination:=dst.Range("A4")
+    dst.Columns("A:E").AutoFit
 
 End Sub
 ```
@@ -114,7 +116,13 @@ dst.Range("A2").Value = "Generated: " & Now
 This line copies the cleaned table into the report:
 
 ```vba
-src.Range("A1:D10").Copy Destination:=dst.Range("A4")
+src.Range("A1:E10").Copy Destination:=dst.Range("A4")
+```
+
+This line adjusts the report columns:
+
+```vba
+dst.Columns("A:E").AutoFit
 ```
 
 ---
@@ -153,6 +161,7 @@ You should see:
 * `Sales Report` in cell `A1`
 * a generated timestamp in `A2`
 * copied data beginning at `A4`
+* report columns adjusted automatically
 
 ---
 
@@ -163,6 +172,7 @@ The `Report` sheet becomes a clean output page with:
 * a title
 * a timestamp
 * a copied data table
+* readable column widths
 
 This gives you a basic automated reporting layout.
 
@@ -228,13 +238,13 @@ This helps you see how the destination anchor affects report layout.
 If your cleaned data extends further down, update:
 
 ```vba
-src.Range("A1:D10")
+src.Range("A1:E10")
 ```
 
 For example:
 
 ```vba
-src.Range("A1:D20")
+src.Range("A1:E20")
 ```
 
 This reinforces that the copied range is fully controlled by the code.
@@ -273,7 +283,7 @@ The macro is designed to rebuild the report from scratch each time.
 
 Check:
 
-* `CleanData!A1:D10` contains data
+* `CleanData!A1:E10` contains data
 * the copy line still points to the correct source range
 * you are looking at the `Report` worksheet
 

@@ -53,6 +53,10 @@ Sub ReportWithInput()
     Dim title As String
     title = InputBox("Enter report title")
 
+    If title = "" Then
+        title = "Sales Report"
+    End If
+
     Worksheets("Report").Range("A1").Value = title
 
 End Sub
@@ -74,6 +78,14 @@ This line asks the user for input:
 title = InputBox("Enter report title")
 ```
 
+These lines provide a default title if the user leaves the box empty or clicks **Cancel**:
+
+```vba
+If title = "" Then
+    title = "Sales Report"
+End If
+```
+
 This line writes the entered value into the worksheet:
 
 ```vba
@@ -84,6 +96,7 @@ Meaning:
 
 * ask the user to enter text
 * store that text in `title`
+* use `Sales Report` if no title is entered
 * place it into `Report!A1`
 
 ---
@@ -135,6 +148,8 @@ You should see the exact title you entered.
 
 The macro asks for a report title and writes the user's input into `Report!A1`.
 
+If the user enters nothing, the macro uses `Sales Report`.
+
 ---
 
 ## Part D - Conceptual Layer
@@ -151,6 +166,9 @@ Now the value comes from the user at runtime:
 
 ```vba
 title = InputBox("Enter report title")
+If title = "" Then
+    title = "Sales Report"
+End If
 Worksheets("Report").Range("A1").Value = title
 ```
 
@@ -220,11 +238,15 @@ Fix:
 
 ### 2. The cell stays blank
 
-Possible cause:
+With the provided version in `All_Exercises_04_to_11.bas`, the cell should not stay blank just because the input was empty.
 
-* You clicked **Cancel** or submitted an empty input
+If the input is empty, the macro uses:
 
-That is normal for this simple version of the macro.
+```vba
+"Sales Report"
+```
+
+If the cell is blank, check whether the fallback `If title = "" Then ...` block was removed or changed.
 
 ---
 

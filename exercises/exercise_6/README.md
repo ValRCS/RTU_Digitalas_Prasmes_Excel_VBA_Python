@@ -66,6 +66,7 @@ Enter this macro:
 
 ```vba
 Sub CopyData()
+    Worksheets("CleanData").Cells.Clear
     Worksheets("RawData").Range("A1:D10").Copy _
         Destination:=Worksheets("CleanData").Range("A1")
 End Sub
@@ -73,6 +74,7 @@ End Sub
 
 How to read it:
 
+* `Worksheets("CleanData").Cells.Clear` removes old content from the destination sheet
 * `Worksheets("RawData")` identifies the source sheet
 * `.Range("A1:D10")` identifies the source range
 * `.Copy` copies that range
@@ -113,11 +115,15 @@ Open the `CleanData` worksheet and confirm that the data from `RawData!A1:D10` n
 
 * `CleanData!A1`
 
+Any previous content on `CleanData` should be cleared first by the macro.
+
 ---
 
 ## Expected Result
 
 The contents of `RawData!A1:D10` are copied into `CleanData!A1:D10`.
+
+Before copying, the macro clears the destination sheet.
 
 ---
 
@@ -134,6 +140,7 @@ It introduces an important VBA pattern:
 Core idea:
 
 ```vba
+Worksheets("CleanData").Cells.Clear
 Worksheets("RawData").Range("A1:D10").Copy _
     Destination:=Worksheets("CleanData").Range("A1")
 ```
@@ -212,11 +219,13 @@ Check:
 
 ### 3. Old data remains below or beside the copied area
 
-That is normal.
+That should not happen with the provided version in `All_Exercises_04_to_11.bas`, because it starts with:
 
-This macro copies data into the target range, but it does not automatically clear everything else on the sheet.
+```vba
+Worksheets("CleanData").Cells.Clear
+```
 
-If needed, clear `CleanData` before running the macro.
+If old data still remains, check whether that line was removed or edited.
 
 ---
 

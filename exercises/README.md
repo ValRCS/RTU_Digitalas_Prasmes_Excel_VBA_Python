@@ -101,7 +101,7 @@ Task:
 
 ```vba
 Sub WriteHello()
-    Range("A1").Value = "Hello, VBA"
+    Worksheets("Playground").Range("A1").Value = "Hello, VBA"
 End Sub
 ```
 
@@ -113,7 +113,7 @@ What to do:
 
 What you should see:
 
-* Cell `A1` is updated.
+* Cell `A1` on `Playground` is updated.
 
 Detailed version: [`exercise_4/README.md`](./exercise_4/README.md)
 
@@ -148,6 +148,7 @@ Task:
 
 ```vba
 Sub CopyData()
+    Worksheets("CleanData").Cells.Clear
     Worksheets("RawData").Range("A1:D10").Copy _
         Destination:=Worksheets("CleanData").Range("A1")
 End Sub
@@ -160,7 +161,7 @@ What to do:
 
 What you should see:
 
-* The data from `RawData` is copied into `CleanData`.
+* `CleanData` is cleared and then the data from `RawData` is copied into it.
 
 Detailed version: [`exercise_6/README.md`](./exercise_6/README.md)
 
@@ -205,7 +206,7 @@ Sub SortData()
     Dim ws As Worksheet
     Set ws = Worksheets("CleanData")
 
-    ws.Range("A1:D10").Sort Key1:=ws.Range("C1"), Header:=xlYes
+    ws.Range("A1:E10").Sort Key1:=ws.Range("C1"), Order1:=xlAscending, Header:=xlYes
 
 End Sub
 ```
@@ -239,7 +240,8 @@ Sub GenerateReport()
     dst.Range("A1").Value = "Sales Report"
     dst.Range("A2").Value = "Generated: " & Now
 
-    src.Range("A1:D10").Copy Destination:=dst.Range("A4")
+    src.Range("A1:E10").Copy Destination:=dst.Range("A4")
+    dst.Columns("A:E").AutoFit
 
 End Sub
 ```
@@ -259,6 +261,10 @@ Sub ReportWithInput()
 
     Dim title As String
     title = InputBox("Enter report title")
+
+    If title = "" Then
+        title = "Sales Report"
+    End If
 
     Worksheets("Report").Range("A1").Value = title
 
@@ -280,8 +286,9 @@ Sub FullWorkflow()
     Call CleanData
     Call SortData
     Call GenerateReport
+    Call ReportWithInput
 
-    MsgBox "Report completed!"
+    MsgBox "Report completed!", vbInformation
 
 End Sub
 ```

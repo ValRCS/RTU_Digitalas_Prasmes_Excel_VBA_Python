@@ -138,6 +138,8 @@ What you should see:
 
 * The value appears in `CleanData`.
 
+Detailed version: [`exercise_5/README.md`](./exercise_5/README.md)
+
 ### Exercise 6: Copy Data Between Sheets
 
 Goal: automate a basic multi-sheet task.
@@ -159,6 +161,8 @@ What to do:
 What you should see:
 
 * The data from `RawData` is copied into `CleanData`.
+
+Detailed version: [`exercise_6/README.md`](./exercise_6/README.md)
 
 ### Exercise 7: Clean Data
 

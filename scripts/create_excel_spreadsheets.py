@@ -6,8 +6,8 @@ from openpyxl import Workbook, load_workbook
 from openpyxl.styles import Font, PatternFill
 from openpyxl.chart import BarChart, Reference
 
-random.seed(42)
-np.random.seed(42)
+random.seed(2026) # random seed for reproducibility
+np.random.seed(2026)
 
 base = Path("latvia_gov_excel_datasets")
 if base.exists():

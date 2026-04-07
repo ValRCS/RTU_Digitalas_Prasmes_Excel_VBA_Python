@@ -1,0 +1,151 @@
+﻿gads,regions,kategorija,izdevumi_milj_eur,projektu_skaits,iedzivotaju_apmierinatiba,pakalpojuma_lietotaji
+2020,Rīga,Izglītība,69.82,10,78.5,66597
+2020,Rīga,Veselība,70.67,10,72.0,62339
+2020,Rīga,Transports,59.94,9,70.0,57058
+2020,Rīga,Kultūra,30.23,7,82.4,23771
+2020,Rīga,Sociālā aizsardzība,47.54,6,72.0,42587
+2020,Kurzeme,Izglītība,50.5,7,78.4,44835
+2020,Kurzeme,Veselība,56.16,9,71.6,52007
+2020,Kurzeme,Transports,46.08,8,73.1,39850
+2020,Kurzeme,Kultūra,20.53,2,81.0,22990
+2020,Kurzeme,Sociālā aizsardzība,34.01,4,63.2,33212
+2020,Vidzeme,Izglītība,51.0,9,70.3,46830
+2020,Vidzeme,Veselība,54.97,9,72.5,50366
+2020,Vidzeme,Transports,44.62,8,65.2,42680
+2020,Vidzeme,Kultūra,16.02,2,76.1,11862
+2020,Vidzeme,Sociālā aizsardzība,31.6,8,62.5,32310
+2020,Zemgale,Izglītība,44.16,7,74.5,42089
+2020,Zemgale,Veselība,58.91,11,68.4,51169
+2020,Zemgale,Transports,46.68,7,59.7,37481
+2020,Zemgale,Kultūra,18.62,4,79.4,19522
+2020,Zemgale,Sociālā aizsardzība,32.17,6,69.3,27720
+2020,Latgale,Izglītība,47.8,7,70.5,41492
+2020,Latgale,Veselība,47.89,9,66.1,43155
+2020,Latgale,Transports,42.0,8,65.7,37408
+2020,Latgale,Kultūra,18.68,3,70.3,11022
+2020,Latgale,Sociālā aizsardzība,26.45,3,66.6,20184
+2021,Rīga,Izglītība,70.86,14,74.9,66728
+2021,Rīga,Veselība,78.11,13,68.5,68940
+2021,Rīga,Transports,65.94,8,69.0,60298
+2021,Rīga,Kultūra,29.42,3,81.6,24360
+2021,Rīga,Sociālā aizsardzība,49.38,8,75.7,43482
+2021,Kurzeme,Izglītība,50.13,9,75.2,50549
+2021,Kurzeme,Veselība,63.47,11,76.2,52364
+2021,Kurzeme,Transports,44.63,6,63.7,34663
+2021,Kurzeme,Kultūra,25.66,4,73.4,19031
+2021,Kurzeme,Sociālā aizsardzība,37.23,7,75.3,45160
+2021,Vidzeme,Izglītība,52.27,7,65.3,48114
+2021,Vidzeme,Veselība,54.44,8,67.4,48435
+2021,Vidzeme,Transports,48.08,8,64.2,39132
+2021,Vidzeme,Kultūra,16.31,2,78.6,21755
+2021,Vidzeme,Sociālā aizsardzība,34.64,7,64.8,26440
+2021,Zemgale,Izglītība,49.17,7,83.1,40972
+2021,Zemgale,Veselība,62.18,9,74.3,57498
+2021,Zemgale,Transports,45.32,7,63.0,42568
+2021,Zemgale,Kultūra,21.34,2,74.5,19896
+2021,Zemgale,Sociālā aizsardzība,40.88,7,67.1,37936
+2021,Latgale,Izglītība,53.08,9,71.2,52198
+2021,Latgale,Veselība,56.18,12,69.5,45668
+2021,Latgale,Transports,37.55,9,70.7,33075
+2021,Latgale,Kultūra,19.83,5,73.4,14265
+2021,Latgale,Sociālā aizsardzība,34.89,5,65.8,30743
+2022,Rīga,Izglītība,76.81,15,77.5,71702
+2022,Rīga,Veselība,78.07,13,69.7,65392
+2022,Rīga,Transports,62.93,10,71.8,51328
+2022,Rīga,Kultūra,33.11,5,80.8,33808
+2022,Rīga,Sociālā aizsardzība,52.76,11,69.5,44699
+2022,Kurzeme,Izglītība,55.48,10,75.8,45596
+2022,Kurzeme,Veselība,63.74,11,81.2,64876
+2022,Kurzeme,Transports,46.12,7,60.2,39143
+2022,Kurzeme,Kultūra,25.66,6,77.2,20474
+2022,Kurzeme,Sociālā aizsardzība,30.34,5,63.9,25184
+2022,Vidzeme,Izglītība,50.17,8,67.6,39286
+2022,Vidzeme,Veselība,67.47,9,66.2,68069
+2022,Vidzeme,Transports,56.63,8,64.1,52335
+2022,Vidzeme,Kultūra,29.28,3,78.6,29464
+2022,Vidzeme,Sociālā aizsardzība,37.34,6,67.1,28104
+2022,Zemgale,Izglītība,54.22,9,76.3,46578
+2022,Zemgale,Veselība,63.71,12,72.0,58748
+2022,Zemgale,Transports,48.23,8,63.5,44677
+2022,Zemgale,Kultūra,23.68,7,86.7,22859
+2022,Zemgale,Sociālā aizsardzība,34.37,4,73.2,31981
+2022,Latgale,Izglītība,52.5,6,77.3,49068
+2022,Latgale,Veselība,53.4,8,70.7,48271
+2022,Latgale,Transports,43.33,7,63.6,39607
+2022,Latgale,Kultūra,27.33,2,77.7,25300
+2022,Latgale,Sociālā aizsardzība,35.22,5,59.6,33014
+2023,Rīga,Izglītība,85.11,12,81.4,75283
+2023,Rīga,Veselība,88.91,13,72.6,85220
+2023,Rīga,Transports,71.04,14,73.6,65692
+2023,Rīga,Kultūra,40.6,7,86.2,35357
+2023,Rīga,Sociālā aizsardzība,53.42,8,74.9,43365
+2023,Kurzeme,Izglītība,61.56,10,80.6,58408
+2023,Kurzeme,Veselība,72.68,13,65.6,65145
+2023,Kurzeme,Transports,47.23,7,72.9,45061
+2023,Kurzeme,Kultūra,23.22,2,81.0,16033
+2023,Kurzeme,Sociālā aizsardzība,37.22,7,73.5,35935
+2023,Vidzeme,Izglītība,47.64,8,75.7,44532
+2023,Vidzeme,Veselība,68.4,8,69.0,63924
+2023,Vidzeme,Transports,43.04,9,67.9,42123
+2023,Vidzeme,Kultūra,22.29,5,84.7,20992
+2023,Vidzeme,Sociālā aizsardzība,38.26,7,64.9,33848
+2023,Zemgale,Izglītība,57.02,10,80.2,47087
+2023,Zemgale,Veselība,64.45,13,69.2,54712
+2023,Zemgale,Transports,50.94,10,67.2,51162
+2023,Zemgale,Kultūra,28.11,6,83.4,34614
+2023,Zemgale,Sociālā aizsardzība,38.0,3,75.6,32371
+2023,Latgale,Izglītība,53.51,11,68.0,43150
+2023,Latgale,Veselība,54.29,8,72.2,50956
+2023,Latgale,Transports,47.33,6,56.2,42819
+2023,Latgale,Kultūra,21.53,4,82.2,19932
+2023,Latgale,Sociālā aizsardzība,38.4,7,69.5,31744
+2024,Rīga,Izglītība,81.87,14,82.0,72109
+2024,Rīga,Veselība,94.82,15,74.2,88660
+2024,Rīga,Transports,65.02,9,63.8,49187
+2024,Rīga,Kultūra,33.63,7,82.6,31055
+2024,Rīga,Sociālā aizsardzība,59.31,12,71.4,58795
+2024,Kurzeme,Izglītība,61.7,9,74.3,49610
+2024,Kurzeme,Veselība,66.08,10,75.9,66358
+2024,Kurzeme,Transports,48.73,9,63.5,45756
+2024,Kurzeme,Kultūra,26.33,2,85.4,21273
+2024,Kurzeme,Sociālā aizsardzība,39.42,5,67.1,37193
+2024,Vidzeme,Izglītība,57.42,10,77.6,56959
+2024,Vidzeme,Veselība,64.27,8,76.5,56519
+2024,Vidzeme,Transports,54.59,10,66.7,50525
+2024,Vidzeme,Kultūra,32.17,8,81.5,29596
+2024,Vidzeme,Sociālā aizsardzība,42.84,6,70.5,38452
+2024,Zemgale,Izglītība,61.16,9,70.6,46751
+2024,Zemgale,Veselība,63.79,10,71.8,65163
+2024,Zemgale,Transports,56.29,8,69.4,49030
+2024,Zemgale,Kultūra,25.21,4,84.5,21334
+2024,Zemgale,Sociālā aizsardzība,44.13,6,70.0,50105
+2024,Latgale,Izglītība,56.22,12,75.6,52922
+2024,Latgale,Veselība,62.3,10,68.1,57789
+2024,Latgale,Transports,45.4,9,70.5,42329
+2024,Latgale,Kultūra,23.19,5,79.0,24613
+2024,Latgale,Sociālā aizsardzība,30.89,5,60.2,21817
+2025,Rīga,Izglītība,90.71,16,76.6,75630
+2025,Rīga,Veselība,86.5,14,85.2,79589
+2025,Rīga,Transports,73.04,13,64.3,64548
+2025,Rīga,Kultūra,37.85,6,87.7,35442
+2025,Rīga,Sociālā aizsardzība,60.15,9,76.1,60652
+2025,Kurzeme,Izglītība,60.54,9,82.8,53722
+2025,Kurzeme,Veselība,76.99,12,79.3,69815
+2025,Kurzeme,Transports,56.7,12,67.1,47269
+2025,Kurzeme,Kultūra,26.33,5,76.2,26247
+2025,Kurzeme,Sociālā aizsardzība,41.13,9,60.9,33868
+2025,Vidzeme,Izglītība,54.6,8,78.0,48421
+2025,Vidzeme,Veselība,67.31,11,73.8,56548
+2025,Vidzeme,Transports,55.27,10,69.5,51973
+2025,Vidzeme,Kultūra,27.44,8,81.7,23465
+2025,Vidzeme,Sociālā aizsardzība,38.06,5,65.0,30701
+2025,Zemgale,Izglītība,62.32,11,78.0,53021
+2025,Zemgale,Veselība,73.68,13,73.2,63696
+2025,Zemgale,Transports,56.52,10,63.0,50596
+2025,Zemgale,Kultūra,28.22,3,83.6,19576
+2025,Zemgale,Sociālā aizsardzība,46.76,10,69.8,43542
+2025,Latgale,Izglītība,49.32,6,74.8,40095
+2025,Latgale,Veselība,67.6,14,67.3,57490
+2025,Latgale,Transports,51.22,11,62.1,47098
+2025,Latgale,Kultūra,31.57,3,75.9,26723
+2025,Latgale,Sociālā aizsardzība,37.03,7,70.0,26225

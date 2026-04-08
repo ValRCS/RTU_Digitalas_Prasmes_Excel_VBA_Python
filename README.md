@@ -64,6 +64,15 @@ Materials for the RTU Digitalas Prasmes course for adult professionals, with a p
 - `exercises/exercise_1/README.md`
   - A detailed beginner walkthrough for recording a first macro and understanding what the recorder generates.
 
+### `notebooks/` - Python Notebooks
+
+- `notebooks/python_vizualizacija_student_lv.ipynb`
+  - Latvian student notebook for Python visualization practice.
+  - Open in Google Colab: https://colab.research.google.com/github/ValRCS/RTU_Digitalas_Prasmes_Excel_VBA_Python/blob/main/notebooks/python_vizualizacija_student_lv.ipynb
+- `notebooks/python_vizualizacija_teacher_lv.ipynb`
+  - Latvian teacher notebook with the corresponding worked example.
+  - Open in Google Colab: https://colab.research.google.com/github/ValRCS/RTU_Digitalas_Prasmes_Excel_VBA_Python/blob/main/notebooks/python_vizualizacija_teacher_lv.ipynb
+
 ### `vba_guides/` - Quick Reference Material
 
 - `README.md`

@@ -72,7 +72,66 @@ VS Code instalējiet:
 
 ---
 
-# 4. Projekta mapes izveide
+# 4. Git uzstādīšana
+
+## 🪟 Windows 10/11
+
+1. Atveriet: https://git-scm.com/download/win
+2. Lejupielāde parasti sāksies automātiski
+3. Instalācijas laikā varat atstāt noklusējuma iestatījumus
+4. Pēc instalēšanas pārbaudiet:
+
+```
+git --version
+```
+
+## 🍎 macOS
+
+Vienkāršākais variants:
+
+```
+xcode-select --install
+```
+
+Tas uzstādīs Apple Command Line Tools, kur parasti ietilpst arī `git`.
+
+Pārbaude:
+
+```
+git --version
+```
+
+Ja nepieciešams, Git var iegūt arī no: https://git-scm.com/download/mac
+
+## Pamatojums
+
+Git ir versiju kontroles rīks, kas ļauj lejupielādēt projektus no GitHub, sekot līdzi izmaiņām un droši saglabāt koda versijas. Tas ir īpaši noderīgi, ja strādājat ar kursa materiāliem, koplietojamiem projektiem vai vēlaties izmantot GitHub Copilot un citus GitHub rīkus pilnvērtīgāk.
+
+---
+
+# 5. GitHub Copilot paplašinājums
+
+Ja vēlaties izmantot AI palīdzību koda rakstīšanā, VS Code var instalēt:
+
+- GitHub Copilot
+- GitHub Copilot Chat
+
+## Uzstādīšana
+
+1. Atveriet VS Code sadaļu Extensions
+2. Atrodiet `GitHub Copilot`
+3. Nospiediet `Install`
+4. Pierakstieties ar savu GitHub kontu
+
+⚠️ GitHub Copilot lietošanai ir nepieciešams GitHub konts. Dažos gadījumos nepieciešams arī aktīvs GitHub Copilot plāns vai izmēģinājuma piekļuve.
+
+## Pamatojums
+
+GitHub Copilot var palīdzēt ātrāk rakstīt kodu, ģenerēt piemērus, skaidrot kļūdas un piedāvāt nākamos soļus darbā ar Python. Tas neaizstāj izpratni par kodu, bet var ievērojami paātrināt mācīšanos un ikdienas darbu.
+
+---
+
+# 6. Projekta mapes izveide
 
 Izveidojiet mapi:
 ```
@@ -88,7 +147,7 @@ Atsevišķa projekta mape uztur visus failus vienuviet un palīdz izvairīties n
 
 ---
 
-# 5. Virtuālā vide (.venv)
+# 7. Virtuālā vide (.venv)
 
 ## 🪟 Windows
 
@@ -125,7 +184,7 @@ Virtuālā vide izolē projekta bibliotēkas no citām datorā uzstādītajām p
 
 ---
 
-# 6. Interpreter izvēle VS Code
+# 8. Interpreter izvēle VS Code
 
 Ctrl + Shift + P (Mac: Cmd + Shift + P)
 
@@ -144,7 +203,7 @@ Izvēlieties:
 
 ---
 
-# 7. Bibliotēku uzstādīšana
+# 9. Bibliotēku uzstādīšana
 
 ## 🪟 Windows
 ```
@@ -162,7 +221,7 @@ Bibliotēkas ir nepieciešamas, lai veiktu praktiskos uzdevumus: `pandas` datu a
 
 ---
 
-# 8. Python tests
+# 10. Python tests
 
 Izveidojiet `test.py`:
 
@@ -189,7 +248,7 @@ Tests pārbauda gan pašu Python darbību, gan to, vai bibliotēkas ir uzstādī
 
 ---
 
-# 9. Notebook tests
+# 11. Notebook tests
 
 Izveidojiet `.ipynb` failu un palaidiet:
 
@@ -206,7 +265,7 @@ print("Notebook darbojas")
 
 ---
 
-# 10. Excel tests
+# 12. Excel tests
 
 ```
 import pandas as pd
@@ -225,7 +284,7 @@ Excel tests apstiprina, ka `pandas` un `openpyxl` spēj ne tikai ielādēties, b
 
 ---
 
-# 11. Biežākās problēmas
+# 13. Biežākās problēmas
 
 ## Windows
 - python neatrod → izmantojiet `py`
@@ -245,7 +304,7 @@ Biežāko problēmu saraksts palīdz ātri diagnosticēt tipiskās kļūdas, nep
 
 ---
 
-# 12. Komandu kopsavilkums
+# 14. Komandu kopsavilkums
 
 ## Windows
 ```
@@ -267,7 +326,7 @@ Komandu kopsavilkums kalpo kā īsa atgādne, kuru var izmantot atkārtoti arī 
 
 ---
 
-# 13. Galvenā ideja
+# 15. Galvenā ideja
 
 Python:
 - automatizē Excel darbu
@@ -276,14 +335,13 @@ Python:
 
 ---
 
-# 14. Minimālais darba princips
+# 16. Minimālais darba princips
 
 1. Atver projektu
 2. Aktivizē `.venv`
 3. Instalē bibliotēkas
 4. Palaiž kodu
 5. Iegūst Excel (vai citus) rezultātus
-
 
 
 

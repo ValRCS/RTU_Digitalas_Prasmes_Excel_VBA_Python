@@ -68,10 +68,10 @@ Materials for the RTU Digitalas Prasmes course for adult professionals, with a p
 
 - `notebooks/python_vizualizacija_student_lv.ipynb`
   - Latvian student notebook for Python visualization practice.
-  - Open in Google Colab: https://colab.research.google.com/github/ValRCS/RTU_Digitalas_Prasmes_Excel_VBA_Python/blob/main/notebooks/python_vizualizacija_student_lv.ipynb
+  - Open in Google Colab: [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ValRCS/RTU_Digitalas_Prasmes_Excel_VBA_Python/blob/main/notebooks/python_vizualizacija_student_lv.ipynb)
 - `notebooks/python_vizualizacija_teacher_lv.ipynb`
   - Latvian teacher notebook with the corresponding worked example.
-  - Open in Google Colab: https://colab.research.google.com/github/ValRCS/RTU_Digitalas_Prasmes_Excel_VBA_Python/blob/main/notebooks/python_vizualizacija_teacher_lv.ipynb
+  - Open in Google Colab: [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ValRCS/RTU_Digitalas_Prasmes_Excel_VBA_Python/blob/main/notebooks/python_vizualizacija_teacher_lv.ipynb)
 
 ### `vba_guides/` - Quick Reference Material
 

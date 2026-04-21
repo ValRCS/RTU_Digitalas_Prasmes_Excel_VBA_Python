@@ -369,12 +369,26 @@ def build_notebook() -> dict:
             """
             # 1. ak. st. PDF faila atvēršana un struktūras izpēte
 
-            Šajā daļā:
+            Šajā akadēmiskajā stundā studenti iepazīstas ar pašu PDF dokumentu kā datu avotu. Mērķis nav vēl veikt dziļu analīzi, bet saprast, kā Python redz dokumentu:
 
-            - atveram digitālu PDF;
-            - nosakām lapu skaitu;
-            - apskatām metadatus;
-            - pārbaudām teksta apjomu katrā lapā.
+            - vai dokumentam ir vairākas lapas;
+            - vai dokumentam ir teksta slānis;
+            - kādu metadatu informāciju var nolasīt;
+            - cik daudz teksta katrā lapā vispār ir pieejams.
+
+            **Izmantotie rīki**
+
+            - `PyPDF2.PdfReader` dokumenta atvēršanai;
+            - `reader.pages` lapu sarakstam;
+            - `reader.metadata` dokumenta metadatiem;
+            - `page.extract_text()` sākotnējam teksta pārbaudījumam.
+
+            **Ko darīs koda šūnas**
+
+            - atvērs `digital_text.pdf`;
+            - parādīs lapu skaitu un metadatus;
+            - izies cauri katrai lapai;
+            - parādīs, cik rakstzīmju katrā lapā iespējams iegūt.
             """
         ),
         code(
@@ -393,15 +407,43 @@ def build_notebook() -> dict:
         ),
         md(
             """
+            ## Refleksija un dokumentācija pēc 1. ak. st.
+
+            **Refleksijas jautājumi**
+
+            - Kā pēc `extract_text()` rezultāta var spriest, vai PDF ir digitāli ģenerēts?
+            - Kāda ir atšķirība starp lapu skaitu, metadatiem un pašu satura ekstraktēšanu?
+            - Kurā brīdī būtu jāsāk domāt par OCR, nevis par parastu PDF teksta nolasīšanu?
+
+            **Autoritatīvi avoti tālākai lasīšanai**
+
+            - [PyPDF2 dokumentācija: sākumlapa](https://pypdf2.readthedocs.io/en/3.x/)
+            - [PyPDF2 dokumentācija: metadata](https://pypdf2.readthedocs.io/en/3.0.0/user/metadata.html)
+            - [pypdf dokumentācija: PdfReader klase](https://pypdf.readthedocs.io/en/stable/modules/PdfReader.html)
+            """
+        ),
+        md(
+            """
             # 2. ak. st. Teksta ekstraktēšana ar PyPDF2
 
-            Šajā daļā:
+            Šajā akadēmiskajā stundā fokuss ir uz teksta ieguvi no digitāli ģenerēta PDF. Šis ir tipisks scenārijs, kad dokumentā jau eksistē teksta slānis un OCR nav vajadzīgs.
 
-            - iegūstam tekstu no vienas lapas;
-            - iegūstam tekstu no visa dokumenta;
-            - iztīrām tekstu;
-            - saglabājam rezultātu;
-            - salīdzinām to ar avota/reference tekstu.
+            **Izmantotie rīki**
+
+            - `page.extract_text()` vienas lapas tekstam;
+            - iepriekš definētā `extract_text_with_pypdf2()` funkcija visa dokumenta tekstam;
+            - `normalize_text()` vienkāršai pēcapstrādei;
+            - `Counter` biežāko vārdu skaitīšanai;
+            - `pandas.DataFrame` rezultātu pārskatāmam attēlojumam.
+
+            **Ko darīs koda šūnas**
+
+            - parādīs pirmās lapas teksta priekšskatījumu;
+            - savāks tekstu no visām lapām vienā blokā;
+            - iztīrīs liekās atstarpes un tukšās rindas;
+            - saglabās rezultātu `.txt` failā;
+            - salīdzinās iegūto tekstu ar reference tekstu;
+            - aprēķinās biežāk sastopamos vārdus.
             """
         ),
         code(
@@ -437,15 +479,41 @@ def build_notebook() -> dict:
         ),
         md(
             """
+            ## Refleksija un dokumentācija pēc 2. ak. st.
+
+            **Refleksijas jautājumi**
+
+            - Vai ekstraktētais teksts pilnībā sakrita ar reference tekstu?
+            - Kādas kļūdas parasti parādās PDF teksta ekstraktēšanā: rindkopas, atstarpes, secība, galvenes?
+            - Kāpēc teksta pēcapstrāde ir gandrīz vienmēr vajadzīga arī digitāliem PDF?
+
+            **Autoritatīvi avoti tālākai lasīšanai**
+
+            - [pypdf dokumentācija: Extract Text from a PDF](https://pypdf.readthedocs.io/en/stable/user/extract-text.html)
+            - [PyPDF2 dokumentācija: sākumlapa un user guide](https://pypdf2.readthedocs.io/en/3.x/)
+            - [pandas dokumentācija: DataFrame.to_csv](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_csv.html)
+            """
+        ),
+        md(
+            """
             # 3. ak. st. Tabulu ekstraktēšana ar `pdfplumber`
 
-            Šajā daļā:
+            Šajā akadēmiskajā stundā uzsvars ir uz strukturētu datu ieguvi no PDF. Tabulas ir sarežģītākas nekā vienkāršs teksts, jo PDF formātā tabula bieži ir tikai vizuāli izkārtots saturs.
 
-            - atveram PDF ar tabulu;
-            - iegūstam pirmo tabulu;
-            - pārveidojam to par `DataFrame`;
-            - eksportējam rezultātu uz CSV;
-            - salīdzinām ar oriģinālo CSV reference failu.
+            **Izmantotie rīki**
+
+            - `pdfplumber.open()` PDF lapu objektu apstrādei;
+            - `page.extract_table()` lielākās tabulas iegūšanai;
+            - `pandas.DataFrame` tabulas strukturēšanai;
+            - `DataFrame.to_csv()` eksportam.
+
+            **Ko darīs koda šūnas**
+
+            - atvērs `table_report.pdf`;
+            - mēģinās iegūt pirmo tabulu no pirmās lapas;
+            - pārvērtīs tabulas datus par `DataFrame`;
+            - saglabās rezultātu CSV formātā;
+            - salīdzinās iegūto tabulu ar oriģinālo `table_report_source.csv`.
             """
         ),
         code(
@@ -476,14 +544,41 @@ def build_notebook() -> dict:
         ),
         md(
             """
+            ## Refleksija un dokumentācija pēc 3. ak. st.
+
+            **Refleksijas jautājumi**
+
+            - Vai tabula tika atrasta automātiski bez papildu parametriem?
+            - Kādas problēmas būtu iespējamas reālos PDF: sapludinātas šūnas, tukšas kolonnas, nobīdīti virsraksti?
+            - Kad ar `extract_table()` pietiek, un kad būtu vajadzīga dziļāka tabulas debugēšana?
+
+            **Autoritatīvi avoti tālākai lasīšanai**
+
+            - [pdfplumber PyPI apraksts](https://pypi.org/project/pdfplumber/)
+            - [pdfplumber GitHub dokumentācija un piemēri](https://github.com/jsvine/pdfplumber)
+            - [pandas dokumentācija: DataFrame.to_csv](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_csv.html)
+            """
+        ),
+        md(
+            """
             # 4. ak. st. OCR tehnoloģijas skenētiem PDF
 
-            Šajā daļā:
+            Šajā akadēmiskajā stundā tiek aplūkota situācija, kurā PDF satur tikai attēlu vai skenētu lapu. Šādā gadījumā parasta teksta ekstraktēšana dod maz vai neko, un jāizmanto OCR.
 
-            - renderējam skenēta PDF pirmo lapu kā attēlu;
-            - izpildām OCR ar `pytesseract`;
-            - normalizējam tekstu;
-            - salīdzinām to ar reference tekstu.
+            **Izmantotie rīki**
+
+            - `pdf2image.convert_from_path()` PDF lapas pārvēršanai attēlā;
+            - `PIL.Image` attēla glabāšanai un attēlošanai;
+            - `pytesseract.image_to_string()` teksta atpazīšanai;
+            - `normalize_text()` OCR rezultāta tīrīšanai.
+
+            **Ko darīs koda šūnas**
+
+            - atvērs `scanned_document.pdf`;
+            - pārvērtīs pirmo lapu par attēlu;
+            - palaidīs OCR ar valodām `eng+lav`;
+            - saglabās OCR rezultātu teksta failā;
+            - salīdzinās OCR rezultātu ar reference tekstu.
             """
         ),
         code(
@@ -520,13 +615,42 @@ def build_notebook() -> dict:
         ),
         md(
             """
+            ## Refleksija un dokumentācija pēc 4. ak. st.
+
+            **Refleksijas jautājumi**
+
+            - Cik labi OCR rezultāts sakrita ar reference tekstu?
+            - Kā OCR kvalitāti ietekmē skenējuma kvalitāte, kontrasts un valodas modelis?
+            - Kāpēc OCR ir atsevišķs solis un nevis vienkārši "tas pats, tikai PDF formātā"?
+
+            **Autoritatīvi avoti tālākai lasīšanai**
+
+            - [pytesseract PyPI dokumentācija](https://pypi.org/project/pytesseract/)
+            - [Tesseract User Manual](https://tesseract-ocr.github.io/tessdoc/)
+            - [pdf2image PyPI dokumentācija](https://pypi.org/project/pdf2image/)
+            """
+        ),
+        md(
+            """
             # 5. ak. st. Batch apstrāde vairākiem PDF failiem
 
-            Šajā daļā:
+            Šajā akadēmiskajā stundā tiek savienots viss iepriekš apgūtais vienā automatizētā darba plūsmā. Mērķis ir vienā ciklā apstrādāt vairākus PDF failus ar dažādu tipu saturu.
 
-            - apstrādājam visus PDF failus mapē `pdf_tasks/batch`;
-            - sagatavojam kopsavilkuma tabulu;
-            - salīdzinām to ar sagaidāmo reference aprakstu.
+            **Izmantotie rīki**
+
+            - `Path.glob()` failu atlasīšanai mapē;
+            - `guess_pdf_type()` dokumenta tipa minēšanai;
+            - `process_batch_pdf()` vienotas apstrādes funkcijai;
+            - `pandas.DataFrame` kopsavilkuma tabulai;
+            - `DataFrame.merge()` rezultātu salīdzināšanai ar reference aprakstu.
+
+            **Ko darīs koda šūnas**
+
+            - atradīs visus PDF failus mapē `pdf_tasks/batch`;
+            - katram failam noteiks tipu un lapu skaitu;
+            - mēģinās iegūt tekstu vai tabulas informāciju;
+            - saglabās rezultātu kopsavilkuma CSV failā;
+            - salīdzinās iegūtos rezultātus ar sagaidāmo `batch_expected_summary.csv`.
             """
         ),
         code(
@@ -572,6 +696,23 @@ def build_notebook() -> dict:
                     "table_min_ok",
                 ]
             ]
+            """
+        ),
+        md(
+            """
+            ## Refleksija un dokumentācija pēc 5. ak. st.
+
+            **Refleksijas jautājumi**
+
+            - Kā batch apstrāde palīdzētu reālā biroja vai datu analīzes darbā?
+            - Kādi riski parādās, ja mapē ir dažādu tipu PDF faili?
+            - Kā jūs paplašinātu šo pipeline, lai tā automātiski izvēlētos arī OCR gadījumus?
+
+            **Autoritatīvi avoti tālākai lasīšanai**
+
+            - [Python 3.14 dokumentācija: pathlib](https://docs.python.org/3/library/pathlib.html)
+            - [pandas user guide: Merge, join, concatenate and compare](https://pandas.pydata.org/docs/user_guide/merging.html)
+            - [pandas API: merge](https://pandas.pydata.org/docs/reference/api/pandas.merge.html)
             """
         ),
         md(

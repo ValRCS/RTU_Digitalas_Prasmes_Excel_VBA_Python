@@ -53,6 +53,26 @@ def build_notebook() -> dict:
             - tiek uzstādīti arī OCR rīki `Tesseract` un `Poppler`;
             - tiek automātiski lejupielādēti sagatavotie faili no repozitorija mapes `pdf_tasks`;
             - koda šūnas ir pilnībā aizpildītas un izpildāmas no sākuma līdz beigām.
+
+            ## Ievads
+
+            Šī notebook mērķis ir soli pa solim parādīt, kā ar Python analizēt dažādu tipu PDF dokumentus:
+
+            - digitāli ģenerētus PDF ar teksta slāni;
+            - PDF failus ar tabulām;
+            - skenētus PDF dokumentus, kuriem vajadzīga OCR pieeja;
+            - vairāku failu batch apstrādi vienā darba plūsmā.
+
+            Praktiski mēs mēģinām sasniegt vienu galveno mērķi: izvēlēties pareizo rīku pareizajam PDF tipam un iegūt rezultātu, ko pēc tam var saglabāt kā tekstu, tabulu vai kopsavilkuma atskaiti.
+
+            Šajā tēmā lielākā daļa grūtību parasti nav pašā Python sintaksē, bet gan tehniskajā sagatavošanā:
+
+            - pareizo bibliotēku uzstādīšanā;
+            - ārējo rīku, piemēram, `Tesseract` un `Poppler`, pieejamībā;
+            - atšķirībā starp digitālu PDF un skenētu PDF;
+            - datu kvalitātes problēmās pēc ekstraktēšanas vai OCR.
+
+            Google Colab šeit palīdz, jo lielu daļu no šīs tehniskās sagatavošanas var automatizēt ar dažām uzstādīšanas šūnām notebook sākumā.
             """
         ),
         md(

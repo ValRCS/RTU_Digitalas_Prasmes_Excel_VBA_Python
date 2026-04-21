@@ -64,10 +64,11 @@ Pirms darba sākšanas:
 - lokālā Windows vidē OCR parasti vajadzīga arī atsevišķa `Tesseract OCR` instalācija.
 
 Ieteicamā datu struktūra:
-- `pdf_tasks/data/digital_text.pdf`
-- `pdf_tasks/data/table_report.pdf`
-- `pdf_tasks/data/scanned_document.pdf`
-- `pdf_tasks/data/batch/`
+- `pdf_tasks/digital_text.pdf`
+- `pdf_tasks/table_report.pdf`
+- `pdf_tasks/scanned_document.pdf`
+- `pdf_tasks/scanned_document_page1.png`
+- `pdf_tasks/batch/`
 
 <!-- CELL: code -->
 ## Ja vajag, atkomentējiet šo rindu bibliotēku uzstādīšanai Jupyter vidē.
@@ -79,6 +80,7 @@ from __future__ import annotations
 from collections import Counter
 from pathlib import Path
 import re
+import shutil
 
 import pandas as pd
 
@@ -110,17 +112,18 @@ except ImportError:
     Image = None
 
 <!-- CELL: code -->
-DATA_ROOT = Path("pdf_tasks") / "data"
-OUTPUT_DIR = Path("pdf_tasks") / "outputs"
-BATCH_DIR = DATA_ROOT / "batch"
+PDF_ROOT = Path("pdf_tasks")
+OUTPUT_DIR = PDF_ROOT / "outputs"
+BATCH_DIR = PDF_ROOT / "batch"
+SCANNED_IMAGE_FALLBACK = PDF_ROOT / "scanned_document_page1.png"
 
-DATA_ROOT.mkdir(parents=True, exist_ok=True)
+PDF_ROOT.mkdir(parents=True, exist_ok=True)
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 BATCH_DIR.mkdir(parents=True, exist_ok=True)
 
-pdf_files = sorted(DATA_ROOT.glob("*.pdf"))
+pdf_files = sorted(PDF_ROOT.glob("*.pdf"))
 
-print(f"PDF faili mapē {DATA_ROOT}: {len(pdf_files)}")
+print(f"PDF faili mapē {PDF_ROOT}: {len(pdf_files)}")
 for path in pdf_files:
     print("-", path.name)
 
@@ -165,7 +168,7 @@ def guess_pdf_type(file_name: str) -> str:
 # 1. ak. st. PDF faila atvēršana un struktūras izpēte
 
 ## Uzdevums
-Izvēlieties vienu PDF failu no mapes `pdf_tasks/data` un:
+Izvēlieties vienu PDF failu no mapes `pdf_tasks` un:
 - ielādējiet to ar `PyPDF2`;
 - nosakiet lapu skaitu;
 - izdrukājiet pirmo lapu numurus vai metadatus;
@@ -176,14 +179,14 @@ Izvēlieties vienu PDF failu no mapes `pdf_tasks/data` un:
 # 1. izvēlieties vienu PDF failu no saraksta pdf_files
 # 2. piešķiriet to mainīgajam sample_pdf
 
-sample_pdf = pdf_files[0] if pdf_files else None
+sample_pdf = next((path for path in pdf_files if "digital" in path.name.lower()), pdf_files[0] if pdf_files else None)
 sample_pdf
 
 <!-- CELL: code -->
 if PdfReader is None:
     print("PyPDF2 nav pieejams. Uzstādiet bibliotēku un atkārtojiet mēģinājumu.")
 elif sample_pdf is None:
-    print("Mapē pdf_tasks/data nav neviena PDF faila.")
+    print("Mapē pdf_tasks nav neviena PDF faila.")
 else:
     reader = PdfReader(str(sample_pdf))
     print("Fails:", sample_pdf.name)
@@ -298,7 +301,7 @@ table_pdf
 if pdfplumber is None:
     print("pdfplumber nav pieejams. Uzstādiet bibliotēku un atkārtojiet mēģinājumu.")
 elif table_pdf is None:
-    print("Mapē pdf_tasks/data nav atrasts PDF ar tabulām.")
+    print("Mapē pdf_tasks nav atrasts PDF ar tabulām.")
 else:
     with pdfplumber.open(table_pdf) as pdf:
         first_page = pdf.pages[0]
@@ -368,21 +371,32 @@ scanned_pdf
 #
 # pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
 
-ocr_ready = all(module is not None for module in [pytesseract, convert_from_path, Image])
+poppler_available = any(shutil.which(tool) for tool in ["pdftoppm", "pdftocairo"])
+ocr_rendering_ready = convert_from_path is not None and poppler_available
+ocr_ready = pytesseract is not None and Image is not None and (
+    ocr_rendering_ready or SCANNED_IMAGE_FALLBACK.exists()
+)
 print("OCR bibliotēkas pieejamas:", ocr_ready)
+print("Poppler rīki pieejami:", poppler_available)
+print("PNG fallback pieejams:", SCANNED_IMAGE_FALLBACK.exists())
 
 <!-- CELL: code -->
 ocr_images = []
 
 if not ocr_ready:
     print("OCR vide nav pilnībā sagatavota.")
-elif scanned_pdf is None:
-    print("Nav atrasts skenēta PDF piemērs.")
-else:
+elif ocr_rendering_ready and scanned_pdf is not None:
     # TODO:
     # pēc vajadzības norādiet poppler_path, ja convert_from_path to prasa.
     ocr_images = convert_from_path(scanned_pdf, first_page=1, last_page=1)
     display(ocr_images[0])
+elif Image is not None and SCANNED_IMAGE_FALLBACK.exists():
+    with Image.open(SCANNED_IMAGE_FALLBACK) as fallback_image:
+        ocr_images = [fallback_image.copy()]
+    print("Izmantots PNG fallback, jo Poppler nav pieejams.")
+    display(ocr_images[0])
+else:
+    print("Nav atrasts skenēta PDF piemērs vai tā PNG fallback.")
 
 <!-- CELL: code -->
 ocr_text = ""
@@ -407,9 +421,14 @@ print(clean_ocr_text[:1500])
 # - kādas kļūdas OCR ieviesa.
 
 comparison = {
-    "sample_pdf_text_chars": len(clean_text),
+    "scanned_pdf_text_chars": 0,
     "ocr_text_chars": len(clean_ocr_text),
 }
+
+if PdfReader is not None and scanned_pdf is not None:
+    scanned_reader = PdfReader(str(scanned_pdf))
+    scanned_pdf_text = "\n\n".join(page.extract_text() or "" for page in scanned_reader.pages)
+    comparison["scanned_pdf_text_chars"] = len(normalize_text(scanned_pdf_text))
 
 comparison
 
@@ -426,7 +445,7 @@ Pierakstiet vismaz 3 novērojumus:
 
 ## Uzdevums
 Izveidojiet vienkāršu darba plūsmu, kas:
-- iziet cauri PDF failiem mapē `pdf_tasks/data/batch`;
+- iziet cauri PDF failiem mapē `pdf_tasks/batch`;
 - nosaka dokumenta tipu;
 - mēģina iegūt lapu skaitu un tekstu vai tabulu;
 - sagatavo kopsavilkuma tabulu.

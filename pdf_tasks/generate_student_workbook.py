@@ -63,6 +63,7 @@ def parse_outline(outline_text: str) -> list[dict]:
             cell = {
                 "cell_type": "code",
                 "execution_count": None,
+                "id": f"code-{len(cells) + 1:03d}",
                 "metadata": {},
                 "outputs": [],
                 "source": to_source_lines(source_text),
@@ -70,6 +71,7 @@ def parse_outline(outline_text: str) -> list[dict]:
         else:
             cell = {
                 "cell_type": "markdown",
+                "id": f"markdown-{len(cells) + 1:03d}",
                 "metadata": {},
                 "source": to_source_lines(content.rstrip()),
             }

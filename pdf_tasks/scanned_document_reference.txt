@@ -1,0 +1,8 @@
+OCR sample document
+
+Student: Marta Ozola
+Course: Digital document analysis
+Attendance: 18 of 20 sessions
+Result: completed with distinction
+
+Scanned copies require OCR because the text layer is missing.

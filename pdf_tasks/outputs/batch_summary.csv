@@ -1,0 +1,4 @@
+file_name,pdf_type_guess,page_count,text_chars,table_rows,status,notes
+attendance_report.pdf,table-heavy,1,,,TODO,
+digital_brief.pdf,digital-text,2,,,TODO,
+scan_archive_copy.pdf,scanned,1,,,TODO,

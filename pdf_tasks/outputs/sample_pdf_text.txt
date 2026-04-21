@@ -1,0 +1,18 @@
+Digital workbook example
+This PDF is designed for PyPDF2 text extraction exercises.
+Students can inspect page counts, metadata, and paragraph text without needing OCR.
+The document mixes short headings, complete sentences, and repeated keywords such as data,
+report, and student.
+Use this file when the notebook asks for a digital text sample.
+
+Lesson notes
+Page two contains enough text to test multi-page extraction and simple cleaning steps.
+Typical tasks include joining pages, counting words, and saving the result to a text file.
+Because the text layer is present, extraction should work directly with PyPDF2.
+Students can compare this result with the OCR example later in the workbook.
+
+Reflection prompts
+Which library worked best for this document type?
+How much cleanup was needed after extraction?
+Which repeated words describe the document most clearly?
+These questions are intentionally simple so the sample stays predictable for automated checks.

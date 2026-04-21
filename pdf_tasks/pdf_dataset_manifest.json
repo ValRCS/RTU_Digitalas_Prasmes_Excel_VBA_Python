@@ -1,0 +1,55 @@
+{
+  "root": "D:\\Github\\RTU_Digitalas_Prasmes_Excel_VBA_Python\\pdf_tasks",
+  "primary_inputs": [
+    {
+      "path": "digital_text.pdf",
+      "kind": "digital-text",
+      "page_count": 3,
+      "companion": "digital_text_source.txt"
+    },
+    {
+      "path": "table_report.pdf",
+      "kind": "table-heavy",
+      "page_count": 1,
+      "companion": "table_report_source.csv"
+    },
+    {
+      "path": "scanned_document.pdf",
+      "kind": "scanned",
+      "page_count": 1,
+      "companion": "scanned_document_reference.txt",
+      "fallback_image": "scanned_document_page1.png"
+    }
+  ],
+  "batch_inputs": [
+    {
+      "file_name": "digital_brief.pdf",
+      "pdf_type_guess": "digital-text",
+      "page_count": 2,
+      "expected_text_chars_min": 350,
+      "expected_table_rows_min": 0,
+      "notes": "Text extraction should work with PyPDF2."
+    },
+    {
+      "file_name": "attendance_report.pdf",
+      "pdf_type_guess": "table-heavy",
+      "page_count": 1,
+      "expected_text_chars_min": 50,
+      "expected_table_rows_min": 4,
+      "notes": "First page should contain an extractable table."
+    },
+    {
+      "file_name": "scan_archive_copy.pdf",
+      "pdf_type_guess": "scanned",
+      "page_count": 1,
+      "expected_text_chars_min": 0,
+      "expected_table_rows_min": 0,
+      "notes": "PyPDF2 should see little or no text. OCR is needed."
+    }
+  ],
+  "notes": [
+    "The notebook reads main sample PDFs directly from pdf_tasks.",
+    "Batch examples live in pdf_tasks/batch.",
+    "The scanned PNG is a fallback for OCR workflows on machines without Poppler."
+  ]
+}

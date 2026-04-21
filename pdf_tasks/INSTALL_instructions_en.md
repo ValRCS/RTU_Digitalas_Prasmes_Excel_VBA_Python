@@ -358,7 +358,7 @@ Pass the Poppler `bin` folder explicitly:
 from pdf2image import convert_from_path
 
 images = convert_from_path(
-    r"pdf_tasks\data\scanned_document.pdf",
+    r"pdf_tasks\scanned_document.pdf",
     poppler_path=r"C:\Tools\poppler\Library\bin",
 )
 ```

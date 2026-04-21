@@ -849,6 +849,49 @@ def build_notebook() -> dict:
             - **batch apstrāde** ļauj vienā plūsmā apstrādāt vairākus dažādu tipu dokumentus.
             """
         ),
+        md(
+            """
+            ## Plašāka informācija un atsauces
+
+            Ja vēlaties šo tēmu apgūt dziļāk, zemāk ir pārbaudīti un autoritatīvi resursi, kuros var lasīt vairāk par konkrētajiem rīkiem un pieejām.
+
+            ### PDF lasīšana, struktūra un teksta ekstraktēšana
+
+            - [PyPDF2 dokumentācija](https://pypdf2.readthedocs.io/en/3.x/)
+            - [pypdf dokumentācija: Extract Text from a PDF](https://pypdf.readthedocs.io/en/stable/user/extract-text.html)
+            - [pypdf dokumentācija: PdfReader klase](https://pypdf.readthedocs.io/en/stable/modules/PdfReader.html)
+
+            ### Tabulu ekstraktēšana no PDF
+
+            - [pdfplumber oficiālais projekts GitHub](https://github.com/jsvine/pdfplumber)
+            - [pdfplumber PyPI lapa](https://pypi.org/project/pdfplumber/)
+
+            ### OCR un skenētu dokumentu apstrāde
+
+            - [pytesseract PyPI lapa](https://pypi.org/project/pytesseract/)
+            - [Tesseract User Manual](https://tesseract-ocr.github.io/tessdoc/)
+            - [pdf2image PyPI lapa](https://pypi.org/project/pdf2image/)
+
+            ### Darbs ar datiem un rezultātu saglabāšana
+
+            - [pandas dokumentācija: DataFrame.to_csv](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_csv.html)
+            - [pandas dokumentācija: merge](https://pandas.pydata.org/docs/reference/api/pandas.merge.html)
+            - [pandas user guide: Merge, join, concatenate and compare](https://pandas.pydata.org/docs/user_guide/merging.html)
+
+            ### Failu ceļi un Python pamatbibliotēka
+
+            - [Python 3 dokumentācija: pathlib](https://docs.python.org/3/library/pathlib.html)
+
+            ### Ko ieteicams lasīt vispirms
+
+            Ja mērķis ir ātri sākt praktisku darbu:
+
+            1. izlasiet `pypdf` vai `PyPDF2` teksta ekstraktēšanas sadaļu;
+            2. pēc tam apskatiet `pdfplumber` tabulu ekstraktēšanu;
+            3. tad izlasiet `Tesseract` un `pytesseract` dokumentāciju OCR sadaļai;
+            4. beigās nostipriniet rezultātu saglabāšanu ar `pandas`.
+            """
+        ),
     ]
 
     return {
